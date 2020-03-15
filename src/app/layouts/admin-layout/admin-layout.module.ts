@@ -5,7 +5,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminLayoutRoutes } from './admin-layout.routing';
 import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { UserProfileComponent } from '../../user-profile/user-profile.component';
-import { TableListComponent } from '../../table-list/table-list.component';
+import { CalendarioComponent } from '../../Calendario/calendario.component';
+import { CrearComponent } from '../../crear/crear.component';
+import { EliminarComponent } from '../../eliminar/eliminar.component';
+import { LoginComponent } from '../../login/login.component';
+import { RegistroComponent } from '../../registro/registro.component';
 import { TypographyComponent } from '../../typography/typography.component';
 import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
@@ -34,7 +38,11 @@ import {MatSelectModule} from '@angular/material/select';
   declarations: [
     DashboardComponent,
     UserProfileComponent,
-    TableListComponent,
+    CalendarioComponent,
+    CrearComponent,
+    EliminarComponent,
+    LoginComponent,
+    RegistroComponent,
     TypographyComponent,
     IconsComponent,
     MapsComponent,
