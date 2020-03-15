@@ -12,13 +12,13 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     RouterModule,
   ],
   declarations: [
-    /*FooterComponent,
-    NavbarComponent,*/
+    FooterComponent,
+    NavbarComponent,
     SidebarComponent
   ],
   exports: [
-    /*FooterComponent,
-    NavbarComponent,*/
+    FooterComponent,
+    NavbarComponent,
     SidebarComponent
   ]
 })
