@@ -2,12 +2,16 @@ import { Routes } from '@angular/router';
 
 import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { UserProfileComponent } from '../../user-profile/user-profile.component';
-import { TableListComponent } from '../../table-list/table-list.component';
+import { CalendarioComponent } from '../../Calendario/calendario.component';
 import { TypographyComponent } from '../../typography/typography.component';
 import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
+import { CrearComponent } from 'app/crear/crear.component';
+import { EliminarComponent } from 'app/eliminar/eliminar.component';
+import { LoginComponent } from 'app/login/login.component';
+import { RegistroComponent } from 'app/registro/registro.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -54,7 +58,11 @@ export const AdminLayoutRoutes: Routes = [
     // }
     { path: 'dashboard',      component: DashboardComponent },
     { path: 'user-profile',   component: UserProfileComponent },
-    { path: 'table-list',     component: TableListComponent },
+    { path: 'calendario',     component: CalendarioComponent },
+    { path: 'crear',          component: CrearComponent },
+    { path: 'eliminar',       component: EliminarComponent },
+    { path: 'login',          component: LoginComponent },
+    { path: 'registro',       component: RegistroComponent },
     { path: 'typography',     component: TypographyComponent },
     { path: 'icons',          component: IconsComponent },
     { path: 'maps',           component: MapsComponent },
