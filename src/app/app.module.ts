@@ -27,6 +27,7 @@ import { EliminarComponent } from './eliminar/eliminar.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 
+
 @NgModule({
   imports: [
     BrowserAnimationsModule,
