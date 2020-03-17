@@ -7,7 +7,7 @@
           <span class="card-title">Crea Tu Actividad</span>
          
         </div>
-        <div class="card-content" ng-app="app-upgrade" ng-controller="myCtrl">
+        <div class="card-content" ng-app="app-crear" ng-controller="myCtrl">
           <h4>Por Favor llena los Espacios</h4>
          <div id="test-slider"></div>
           <div class="row">
@@ -15,11 +15,11 @@
                                   <div class="row" >
                                     <div class="input-field col s6">
                                       <input placeholder="Nombre Actividad" id="NombreActividad" type="text" ng-model="NombreA" class="validate">
-                                      <label for="Text">Nombre de la actividad que deseas actualizar</label>
+                                      <label for="Text">Nombre de tu actividad</label>
                                     </div>
-
                                     <div class="input-field col s6">
                                       <input placeholder="Horas de Trabajo" id="HorasdeActividad" type="text" ng-model="Horas" class="validate">
+                                      
                                        </div>
                                   </div>
 
@@ -34,15 +34,15 @@
                                         </div>
                                       </div>
                                       <div align="Center">
-                                 <h5>Selecciona la Nueva Prioridad de tu Actividad</h5>
-                                    <a class="waves-effect waves-light btn green darken-1"><i class="material-icons left" id="Baja" (Click)="prioridadB()" >filter_1</i>Baja</a>
-                                    <a class="waves-effect waves-light btn yellow darken-2"><i class="material-icons left" id="Media" (Click)="prioridadM()" >filter_2</i>Media</a>
-                                    <a class="waves-effect waves-light btn red accent-4"><i class="material-icons right" id="Alta"  (Click)="prioridadA()" >filter_3</i>Alta</a>
+                                 <h5>Selecciona la Prioridad de tu Actividad</h5>
+                                    <a class="waves-effect waves-light btn green darken-1"><i class="material-icons left" id="Baja" (click)="prioridadB()" >filter_1</i>Baja</a>
+                                    <a class="waves-effect waves-light btn yellow darken-2"><i class="material-icons left" id="Media" (click)="prioridadM()" >filter_2</i>Media</a>
+                                    <a class="waves-effect waves-light btn red accent-4"><i class="material-icons right" id="Alta" (click)="prioridadA()">filter_3</i>Alta</a>
                                      </div>       
                                   
                                   <div class="row">
-                                    <div class="col s12" ng-app="app-upgrade" ng-controller="myCtrl">
-                                      Nueva Descripcion de tu Actividad
+                                    <div class="col s12" ng-app="app-crear" ng-controller="myCtrl">
+                                      Descripcion de tu Actividad
                                       <div class="input-field inline">
                                         <input id="Descripcion" type="email" class="validate">
                                         <label for="email_inline"></label>
@@ -55,7 +55,7 @@
                               <div class = "progress">
          <div class = "indeterminate"></div>
       </div>
-          <a class="btn-floating halfway-fab waves-effect waves-light red" (click)="Actualizar()"><i class="material-icons">update</i></a>
+          <a class="btn-floating halfway-fab waves-effect waves-light red" (click)="Agregar()"><i class="material-icons">add</i></a>
         </div>
       </div>
     </div>

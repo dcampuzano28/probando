@@ -1,0 +1,32 @@
+<div class="main-content">
+    <div class="row">
+    <div class="col s5 m8 offset-m4">
+      <div class="card N/A transparent">
+        <div class="card-image">
+          <img src="documentation/img/delete.gif"   >
+          <span class="card-title">Elimina tu actividad</span>
+         
+        </div>
+        <div class="card-content" ng-app="app-eliminar" ng-controller="myCtrl">
+          <h4>Por Favor llena los Espacios</h4>
+         <div id="test-slider"></div>
+          <div class="row">
+                                <form class="col s12"  >
+                                  <div class="row" >
+                                    <div class="input-field col s6">
+                                      <input placeholder="Nombre Actividad" id="NombreActividad" type="text" ng-model="NombreA" class="validate">
+                                      <label for="Text">Nombre de la actividad a eliminar </label>
+                                    </div>
+                                  </div>
+                                </form>
+                              </div>
+                              <div class = "progress">
+         <div class = "indeterminate"></div>
+      </div>
+          <a class="btn-floating halfway-fab waves-effect waves-light red" (click)="Eliminar()"><i class="material-icons">clear</i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
