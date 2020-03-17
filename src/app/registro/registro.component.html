@@ -10,33 +10,36 @@
                     <div class="card-body">
                         <form class="navbar-form">
                             <div class="input-group no-border">
-                                <input type="text" value="" class="form-control" placeholder="Nombres...">
+                                <input type="text" value="" class="form-control" placeholder="Nombres..." [(ngModel)]="nombres" name="SinnombreSetotea">
                                 <!--<button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon">
                                     <i class="material-icons">search</i>
                                     <div class="ripple-container"></div>
                                 </button>-->
                             </div>
                             <div class="input-group no-border">
-                                <input type="text" value="" class="form-control" placeholder="Apellidos...">
+                                <input type="text" value="" class="form-control" placeholder="Apellidos..."[(ngModel)]="apellidos" name="apellidos">
                             </div>
                             <div class="input-group no-border">
-                                <input type="text" value="" class="form-control" placeholder="Correo electronico...">
+                                <input type="text" value="" class="form-control" placeholder="Usuario..." [(ngModel)]="usuario" name="usuario">
                             </div>
                             <div class="input-group no-border">
-                                <input type="text" value="" class="form-control" placeholder="Carrera que estudias...">
+                                <input type="text" value="" class="form-control" placeholder="Correo electronico..." [(ngModel)]="correoelectronico" name="correoelectronico">
                             </div>
                             <div class="input-group no-border">
-                                <input type="text" value="" class="form-control" placeholder="Genero (M o F)...">
+                                <input type="text" value="" class="form-control" placeholder="Carrera que estudias..." [(ngModel)]="carrera" name="carrera">
                             </div>
                             <div class="input-group no-border">
-                                <input type="password" value="" class="form-control" placeholder="Contraseña...">
+                                <input type="text" value="" class="form-control" placeholder="Genero (M o F)..." [(ngModel)]="genero" name="genero">
                             </div>
                             <div class="input-group no-border">
-                                <input type="password" value="" class="form-control" placeholder="Repetir contraseña...">
+                                <input type="password" value="" class="form-control" placeholder="Contraseña..." [(ngModel)]="contrasena" name="contrasena">
                             </div>
                             <div class="input-group no-border">
-                                <button  type="submit" class="btn btn-white btn-round " style="background-color: rgb(192, 189, 189); color: beige; ">
-                                    Registrar
+                                <input type="password" value="" class="form-control" placeholder="Repetir contraseña..." [(ngModel)]="recontrasena" name="recontrasena">
+                            </div>
+                            <div class="input-group no-border">
+                                <button (click)="validarRegistro()" [routerLink]="['/login']" type="submit" class="btn btn-white btn-round " style="background-color: rgb(192, 189, 189); color: beige; ">
+                                    Aceptar
                                     
                                 </button>
                             </div>
