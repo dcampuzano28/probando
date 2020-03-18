@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
- 
+import { Actividad } from '../Clases/Actividad';
+import { ServicioActividadService } from 'app/Servicios/servicio-actividad.service';
+
 @Component({
  selector: 'app-calendario',
  templateUrl: './calendario.component.html',
@@ -23,9 +25,31 @@ hora19: string[]=['19:00-20:00','---------','---------','---------','---------',
 hora20: string[]=['20:00-21:00','---------','---------','---------','---------','---------','---------','---------']; 
 hora21: string[]=['21:00-22:00','---------','---------','---------','---------','---------','---------','---------']; 
  
-constructor() { }
- 
+/*dias: { [nombre: string]: IPerson; } = {
+    "p1": { firstName: "F1", lastName: "L1" },
+    "p2": { firstName: "F2" }
+    };*/
+
+constructor(private servicioActividad:ServicioActividadService) { }
+
+actividad:Actividad
+columna:Number //Es el indice para cada arreglo de las horas
+fila:Number
+nombre:String
+dia:String
+hora:Number
+
  ngOnInit() {
+     this.actividad=this.servicioActividad.getActividad()
+     console.log('Se envio la actividad '+ this.actividad.nombre)
  }
+
+ agregarAtividad(){
+     this.columna=this.actividad.dia
+ }
+ convColumna(dia:String){
+
+ }
+
  
  }

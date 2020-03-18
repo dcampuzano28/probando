@@ -1,0 +1,42 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Nueva actividad</h4>
+                        <p class="card-category"> en este espacio se va a crear una nueva actividad</p>
+                    </div>
+                    <div class="card-body">
+                        <form  class="navbar-form" >
+                            <div class="input-group no-border">
+                                <input type="text" value="" class="form-control" placeholder="Nombre de la actividad nueva..."[(ngModel)]="nombreActividad" name="nombreUsuario">
+                                <!--<button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon">
+                                    <i class="material-icons">search</i>
+                                    <div class="ripple-container"></div>
+                                </button>-->
+                            </div>
+                            
+                            <div class="input-group no-border">
+                                <input type="text" value="" class="form-control" placeholder="Dia que se realiza la actividad..."  [(ngModel)]="dia" name="contrasena">
+                            </div>
+                            <div class="input-group no-border">
+                                <input type="text" value="" class="form-control" placeholder="Hora que se realiza la actividad (de 7 - 21 ej: 8,11 ó 20)..."  [(ngModel)]="hora" name="contrasena">
+                            </div>
+                            <div class="input-group no-border">
+                                <button (click)="crearActividad()" [routerLink]="['/calendario']" type="submit" class="btn btn-white btn-round " style="background-color: rgb(192, 189, 189); color: beige; ">
+                                    Crear
+                                    
+                                </button>
+                                
+                            </div>
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+  </div>
+  

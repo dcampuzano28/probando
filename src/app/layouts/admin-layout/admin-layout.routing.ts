@@ -4,6 +4,8 @@ import { CrearComponent } from 'app/crear/crear.component';
 import { EliminarComponent } from 'app/eliminar/eliminar.component';
 import { LoginComponent } from 'app/login/login.component';
 import { RegistroComponent } from 'app/registro/registro.component';
+import { ActividadCrearComponent } from 'app/actividad-crear/actividad-crear.component';
+
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -54,5 +56,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'eliminar',       component: EliminarComponent },
     { path: 'login',          component: LoginComponent },
     { path: 'registro',       component: RegistroComponent },
+    { path: 'actividadcrear',       component: ActividadCrearComponent },
 
 ];
