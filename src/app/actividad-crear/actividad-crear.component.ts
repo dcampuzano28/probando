@@ -14,7 +14,11 @@ export class ActividadCrearComponent implements OnInit {
   constructor(private servicioActividad:ServicioActividadService) { }
 
   ngOnInit(): void {
-    this.enviarActividad()
+    try {
+      this.enviarActividad()
+    } catch (error) {
+      console.log('Se genero un error en actividadcrearcomponent')
+    }
   }
 
   crearActividad(){

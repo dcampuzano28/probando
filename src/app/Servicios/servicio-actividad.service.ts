@@ -5,6 +5,7 @@ import { Actividad } from '../Clases/Actividad';
 export class ServicioActividadService {
 
   miActividad:Actividad
+  
   constructor() { }
   setActividad(actividad:Actividad){
     this.miActividad=actividad

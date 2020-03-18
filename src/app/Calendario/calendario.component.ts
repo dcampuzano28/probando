@@ -25,31 +25,74 @@ hora19: string[]=['19:00-20:00','---------','---------','---------','---------',
 hora20: string[]=['20:00-21:00','---------','---------','---------','---------','---------','---------','---------']; 
 hora21: string[]=['21:00-22:00','---------','---------','---------','---------','---------','---------','---------']; 
  
-/*dias: { [nombre: string]: IPerson; } = {
-    "p1": { firstName: "F1", lastName: "L1" },
-    "p2": { firstName: "F2" }
-    };*/
+
 
 constructor(private servicioActividad:ServicioActividadService) { }
 
 actividad:Actividad
-columna:Number //Es el indice para cada arreglo de las horas
-fila:Number
-nombre:String
-dia:String
-hora:Number
+
 
  ngOnInit() {
-     this.actividad=this.servicioActividad.getActividad()
-     console.log('Se envio la actividad '+ this.actividad.nombre)
+     try{
+         this.actividad=this.servicioActividad.getActividad()
+         console.log('Se envio la actividad '+ this.actividad.nombre)
+     }catch(error){
+         console.log("Se generoun error en Calendariocomponent")
+     }
  }
 
- agregarAtividad(){
-     this.columna=this.actividad.dia
+ agregarAtividad(actividad:Actividad){
+     let indice:Number=this.validardia(this.actividad.dia)
+     let fila:String[]=this.validarHora(this.actividad.hora)
+     fila.push(actividad.nombre)
  }
  convColumna(dia:String){
 
  }
+validardia(dia:String){
+    let res:Number
+    if(dia=='lunes'){
+        res=0
+    }
+    if(dia=='martes'){
+        res=1
+    }
+    if(dia=='miercoles'){
+        res=2
+    }
+    if(dia=='jueves'){
+        res=3
+    }
+    if(dia=='viernes'){
+        res=4
+    }
+    if(dia=='sabado'){
+        res=5
+    }
+    if(dia=='domingo'){
+        res=6
+    }
+    return res
+}
+validarHora(hora:Number){
+    let res:String[]
+    if(hora==7) res=this.hora7
+    if(hora==8) res=this.hora8
+    if(hora==9) res=this.hora9
+    if(hora==10) res=this.hora10
+    if(hora==11) res=this.hora11
+    if(hora==12) res=this.hora12
+    if(hora==13) res=this.hora13
+    if(hora==14) res=this.hora14
+    if(hora==15) res=this.hora15
+    if(hora==16) res=this.hora16
+    if(hora==17) res=this.hora17
+    if(hora==18) res=this.hora18
+    if(hora==19) res=this.hora19
+    if(hora==20) res=this.hora20
+    if(hora==21) res=this.hora21
+return res
 
+}
  
  }

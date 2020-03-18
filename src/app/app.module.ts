@@ -13,6 +13,7 @@ import { CrearComponent } from './crear/crear.component';
 import { EliminarComponent } from './eliminar/eliminar.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
+import { ServicioActividadService } from './Servicios/servicio-actividad.service';
 
 
 
@@ -33,7 +34,7 @@ import { RegistroComponent } from './registro/registro.component';
     AppComponent,
     AdminLayoutComponent,
   ],
-  providers: [],
+  providers: [ServicioActividadService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
