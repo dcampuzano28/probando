@@ -29,22 +29,17 @@ hora21: string[]=['21:00-22:00','---------','---------','---------','---------',
 
 constructor(private servicioActividad:ServicioActividadService) { }
 
-actividad:Actividad
+actividades:Actividad[]
 
 
  ngOnInit() {
-     try{
-         this.actividad=this.servicioActividad.getActividad()
-         console.log('Se envio la actividad '+ this.actividad.nombre)
-     }catch(error){
-         console.log("Se generoun error en Calendariocomponent")
-     }
+        this.actividades=this.servicioActividad.getActividades()
+        if(this.actividades)console.log('La ultima actividad creada es: '+this.actividades[this.actividades.length-1].nombre)
+
  }
 
  agregarAtividad(actividad:Actividad){
-     let indice:Number=this.validardia(this.actividad.dia)
-     let fila:String[]=this.validarHora(this.actividad.hora)
-     fila.push(actividad.nombre)
+
  }
  convColumna(dia:String){
 
@@ -92,6 +87,9 @@ validarHora(hora:Number){
     if(hora==20) res=this.hora20
     if(hora==21) res=this.hora21
 return res
+
+}
+getActividades(){
 
 }
  

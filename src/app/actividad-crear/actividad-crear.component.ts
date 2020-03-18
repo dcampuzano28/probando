@@ -7,29 +7,19 @@ import { Actividad } from  '../Clases/Actividad';
   styleUrls: ['./actividad-crear.component.css']
 })
 export class ActividadCrearComponent implements OnInit {
-  nombreActividad:String
-  dia:String
-  hora:String
   actividad:Actividad
+  
   constructor(private servicioActividad:ServicioActividadService) { }
 
   ngOnInit(): void {
-    try {
-      this.enviarActividad()
-    } catch (error) {
-      console.log('Se genero un error en actividadcrearcomponent')
-    }
+    this.actividad=this.servicioActividad.nuevaActividad()
   }
 
   crearActividad(){
-    console.log('Se creo la actividad: '+this.nombreActividad)
-    console.log('para el dia: '+this.dia+' a la hora: '+this.hora)
+    this.servicioActividad.agregarActividad(this.actividad)
+    console.log('Se creo la actividad '+this.actividad.nombre)
+
   }
-  enviarActividad(){
-    this.actividad.nombre=this.nombreActividad
-    this.actividad.dia=this.dia
-    this.actividad.hora=Number(this.hora)
-    this.servicioActividad.setActividad(this.actividad)
-  }
+
 
 }
