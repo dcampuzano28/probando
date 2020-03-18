@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actividad } from '../Clases/Actividad';
-import { HttpClient, HttpErrorResponse} from '@angular/common/http'
+import { HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http'
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import 'rxjs/add/operator/do'
@@ -19,9 +19,7 @@ export class ServicioActividadService {
   setActividad(actividades:Actividad[]){
     this.misActividades=actividades
   }
-  /*getActividades():Observable<Actividad[]>{
-    return of()
-  }*/
+
   getActividades(){
     return this.misActividades
   }
@@ -44,4 +42,12 @@ export class ServicioActividadService {
         hora:null
       };
   }
+  addActividad(actividad: Actividad): Observable<any>{
+    let json = JSON.stringify(actividad);
+    let params = "json="+json;
+    let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
+     
+    return this.http.post(this.url+'productos', params, {headers: headers});
+}
+
 }
