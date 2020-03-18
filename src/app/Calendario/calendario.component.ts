@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Actividad } from '../Clases/Actividad';
 import { ServicioActividadService } from 'app/Servicios/servicio-actividad.service';
+import { Observable } from 'rxjs';
 
 @Component({
  selector: 'app-calendario',
@@ -30,11 +31,15 @@ hora21: string[]=['21:00-22:00','---------','---------','---------','---------',
 constructor(private servicioActividad:ServicioActividadService) { }
 
 actividades:Actividad[]
-
+errorMessage:any
 
  ngOnInit() {
         this.actividades=this.servicioActividad.getActividades()
-        if(this.actividades)console.log('La ultima actividad creada es: '+this.actividades[this.actividades.length-1].nombre)
+        //if(this.actividades)console.log('La ultima actividad creada es: '+this.actividades[this.actividades.length-1].nombre)
+        this.servicioActividad.getBDActividades().subscribe(
+            actividades => this.actividades =actividades,
+            error => this.errorMessage= <any>error
+        )
 
  }
 
