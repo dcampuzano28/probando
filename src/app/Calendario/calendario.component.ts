@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-//import {hora} from '../Calendario/arreglo.ts'
+import { ActividadService } from '../Servicio/actividad.service';
 
 @Component({
   selector: 'app-calendario',
@@ -9,42 +9,178 @@ import { Component, OnInit } from '@angular/core';
 
 export class CalendarioComponent implements OnInit {
   
-hora7: string[]=['7:00-8:00','---------','---------','---------','---------','---------','---------','---------'];  
-hora8: string[]=['8:00-9:00','---------','---------','---------','---------','---------','---------','---------'];  
-hora9: string[]=['9:00-10:00','---------','---------','---------','---------','---------','---------','---------'];  
-hora10: string[]=['10:00-11:00','---------','---------','---------','---------','---------','---------','---------'];  
-hora11: string[]=['11:00-12:00','---------','---------','---------','---------','---------','---------','---------'];  
-hora12: string[]=['12:00-13:00','---------','---------','---------','---------','---------','---------','---------'];  
-hora13: string[]=['13:00-14:00','---------','---------','---------','---------','---------','---------','---------'];  
-hora14: string[]=['14:00-15:00','---------','---------','---------','---------','---------','---------','---------'];  
-hora15: string[]=['15:00-16:00','---------','---------','---------','---------','---------','---------','---------'];  
-hora16: string[]=['16:00-17:00','---------','---------','---------','---------','---------','---------','---------'];  
-hora17: string[]=['17:00-18:00','---------','---------','---------','---------','---------','---------','---------'];  
-hora18: string[]=['18:00-19:00','---------','---------','---------','---------','---------','---------','---------'];  
-hora19: string[]=['19:00-20:00','---------','---------','---------','---------','---------','---------','---------'];  
-hora20: string[]=['20:00-21:00','---------','---------','---------','---------','---------','---------','---------'];  
-hora21: string[]=['21:00-22:00','---------','---------','---------','---------','---------','---------','---------'];  
-people: any[] = [
-    {
-      "name": "Douglas  Pace"
-    },
-    {
-      "name": "Mcleod  Mueller"
-    },
-    {
-      "name": "Day  Meyers"
-    },
-    {
-      "name": "Aguirre  Ellis"
-    },
-    {
-      "name": "Cook  Tyson"
-    }
-  ];
-  constructor() { }
+hora7: any[] = [
+  {
+    "nombre": "Nombre de la actividad",
+    "prioridad" : 1,
+    "descripcion" : "Aca esta la descripcion de la actividad, Mensaje motivacional o lo que se eso"
+  },
+  {
+    "nombre": "Nombre de la actividad",
+    "prioridad" : 2,
+    "descripcion" : "Aca esta la descripcion de la actividad, Mensaje motivacional o lo que se eso"
+  },
+  {
+    "nombre": "Nombre de la actividad",
+    "prioridad" : 3,
+    "descripcion" : "Aca esta la descripcion de la actividad, Mensaje motivacional o lo que se eso"
+  },
+  {
+    "nombre": "Nombre de la actividad",
+    "prioridad" : 1,
+    "descripcion" : "Aca esta la descripcion de la actividad, Mensaje motivacional o lo que se eso"
+  },
+  {
+    "nombre": "Nombre de la actividad",
+    "prioridad" : 2,
+    "descripcion" : "Aca esta la descripcion de la actividad, Mensaje motivacional o lo que se eso"
+  },
+  {
+    "nombre": "",
+    "prioridad" : 0,
+    "descripcion" :""
+  },
+  {
+    "nombre": "Nombre de la actividad",
+    "prioridad" : 1,
+    "descripcion" : "Aca esta la descripcion de la actividad, Mensaje motivacional o lo que se eso"
+  },
+];
+
+hora8: any[] = [
+  {
+    "nombre": "",
+    "prioridad" : 0,
+    "descripcion" :"" 
+  },
+  {
+    "nombre": "Nombre de la actividad",
+    "prioridad" : 2,
+    "descripcion" : "Aca esta la descripcion de la actividad, Mensaje motivacional o lo que se eso"
+  },
+  {
+    "nombre": "Nombre de la actividad",
+    "prioridad" : 3,
+    "descripcion" : "Aca esta la descripcion de la actividad, Mensaje motivacional o lo que se eso"
+  },
+  {
+    "nombre": "Nombre de la actividad",
+    "prioridad" : 1,
+    "descripcion" : "Aca esta la descripcion de la actividad, Mensaje motivacional o lo que se eso"
+  },
+  {
+    "nombre": "Nombre de la actividad",
+    "prioridad" : 2,
+    "descripcion" : "Aca esta la descripcion de la actividad, Mensaje motivacional o lo que se eso"
+  },
+  {
+    "nombre": "Nombre de la actividad",
+    "prioridad" : 3,
+    "descripcion" : "Aca esta la descripcion de la actividad, Mensaje motivacional o lo que se eso"
+  },
+  {
+    "nombre": "Nombre de la actividad",
+    "prioridad" : 1,
+    "descripcion" : "Aca esta la descripcion de la actividad, Mensaje motivacional o lo que se eso"
+  },
+];
+
+hora9: any[] = [
+  {
+    "nombre": "",
+    "prioridad" : 0,
+    "descripcion" :"" 
+  },
+]
+
+hora10: any[] = [
+  {
+    "nombre": "",
+    "prioridad" : 0,
+    "descripcion" :"" 
+  },
+]
+hora11: any[] = [
+  {
+    "nombre": "",
+    "prioridad" : 0,
+    "descripcion" :"" 
+  },
+]
+hora12: any[] = [
+  {
+    "nombre": "",
+    "prioridad" : 0,
+    "descripcion" :"" 
+  },
+]
+hora13: any[] = [
+  {
+    "nombre": "",
+    "prioridad" : 0,
+    "descripcion" :"" 
+  },
+]
+hora14: any[] = [
+  {
+    "nombre": "",
+    "prioridad" : 0,
+    "descripcion" :"" 
+  },
+]
+hora15: any[] = [
+  {
+    "nombre": "",
+    "prioridad" : 0,
+    "descripcion" :"" 
+  },
+]
+hora16: any[] = [
+  {
+    "nombre": "",
+    "prioridad" : 0,
+    "descripcion" :"" 
+  },
+]
+hora17: any[] = [
+  {
+    "nombre": "",
+    "prioridad" : 0,
+    "descripcion" :"" 
+  },
+]
+hora18: any[] = [
+  {
+    "nombre": "",
+    "prioridad" : 0,
+    "descripcion" :"" 
+  },
+]
+hora19: any[] = [
+  {
+    "nombre": "",
+    "prioridad" : 0,
+    "descripcion" :"" 
+  },
+]
+hora20: any[] = [
+  {
+    "nombre": "",
+    "prioridad" : 0,
+    "descripcion" :"" 
+  },
+]
+hora21: any[] = [
+  {
+    "nombre": "",
+    "prioridad" : 0,
+    "descripcion" :"" 
+  },
+]
+
+constructor(private actividadService: ActividadService) { }
 
   ngOnInit() {
-   // this.getHora();
   }
 
   
