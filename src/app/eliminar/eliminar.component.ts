@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgSwitchDefault } from '@angular/common';
+import { ExecFileOptionsWithStringEncoding } from 'child_process';
 
 @Component({
   selector: 'app-eliminar',
@@ -7,19 +8,17 @@ import { NgSwitchDefault } from '@angular/common';
   styleUrls: ['./eliminar.component.css']
 })
 export class EliminarComponent implements OnInit {
-  Dia: number
-  Mes: number
-  year: number
-  HoraA: number
+   Dia: ""
+   HoraA:number
+
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-Eliminar() {
-     alert("Esta es la fecha dd/mm/aa "+this.Dia +  " / "+this.Mes+" / "+this.year );
+  Eliminar() {
+     alert("Esta es la fecha d "+this.Dia +  " / "+this.HoraA );
   }
-
 
 }

@@ -10,7 +10,6 @@ export class CrearComponent implements OnInit {
   NombreA:""
   HorasA:number
   Fecha:""
-  DescipcionA:""
   Prioridad:number
 
   constructor() { }
