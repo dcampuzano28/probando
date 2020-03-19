@@ -1,35 +1,30 @@
 <div class="main-content">
     <div class="container-fluid">
         <div class="card" style="width: 50rem;">
-				 <div class="card-header card-header-danger">
-						<h4 class="card-title " style="align-content: center;" >Prioridad de tus Actividades</h4>
-						
+  <div class="card-header card-header-danger">
+                        <h4 class="card-title " style="align-content: center;" >Elimina alguna Actividad</h4>
                         <p class="card-category">Llena los Espacios </p>
                         
-                    </div>
-				<div class="card-body" id="Acciones">
-					<div class="input-group">
-							<form>
-								<div class="form-group">
-									<label for="Text">Nombre de tu prioridad</label>
-									<input type="text" class="form-control"   aria-describedby="Nombre de tu prioridad" [(ngModel)]="nom_Prioridad" name="nom_Prioridad">
-									
-								</div>
-								<div class="form-group">
-									<label for="Text">Valor de tu prioridad</label>
-									<input type="text" class="form-control"   aria-describedby="Valor de tu prioridad" [(ngModel)]="val_prioridad" name="val_prioridad">
-									
-								</div>
-							</form>
-					
-					
-					
-					
-					
-                </div>
-                <button type="button" class="btn btn-success" (click)="EnviarP()">Success</button>
-                
+                    </div><div class="card-body" ng-app="app-eliminar" >
+    <h5 class="card-title">Ingresa los datos de la actividad a Eliminar</h5>
+    
+                         <form>
+                                    <div class="form-group row">
+                                        <div class="col-sm-10" >
+                                        <input type="Text" class="form-control" id="inputPassword" placeholder="Dia de tu actividad" [(ngModel)]="Dia" name="Dia">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row" >
+                                        <label for="Text" class="col-sm-2 col-form-label">Hora</label>
+                                        <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputPassword" placeholder="Hora Actividad" ngModel="HoraA" [(ngModel)]="HoraA" name="HoraA">
+                                        </div>
+                                    </div>
+                                    </form>
+                                          
+                                     <a href="#" class="btn btn-success" (click)="Eliminar()"  >liminar</a>
+    
 </div>
-  
+</div>
     </div>
 </div>

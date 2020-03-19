@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgSwitchDefault } from '@angular/common';
+import { ExecFileOptionsWithStringEncoding } from 'child_process';
 
 @Component({
   selector: 'app-eliminar',
@@ -7,44 +8,17 @@ import { NgSwitchDefault } from '@angular/common';
   styleUrls: ['./eliminar.component.css']
 })
 export class EliminarComponent implements OnInit {
-  
-nom_Prioridad:" "
-val_prioridad:number
+   Dia: ""
+   HoraA:number
+
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-EnviarP(){
-  alert(this.nom_Prioridad);
-  alert(this.val_prioridad);
-   function UserController($scope,$http) {
-    $scope.update = function (user) {
-        $http({
-            method: 'POST',
-            url: 'http://localhost:8000/aplicacion/api/aplicacion/actividad',
-            //url para llamado 
-             data: {
-                  "nom_Prioridad":this.nom_Prioridad,
-                  "val_prioridad":this.val_prioridad,
-                 
-                  
-   },
-            transformRequest: function (data) {
-                var postData = data;
-                for (var prop in data)
-                postData.push(encodeURIComponent(prop) + "=" + encodeURIComponent(data[prop]));
-                return postData.join("&");
-            },
-            success: function() {
-              alert("Funciona");
-            }
-            
-        });
-    }
-}
-
-}
+  Eliminar() {
+     alert("Esta es la fecha d "+this.Dia +  " / "+this.HoraA );
+  }
 
 }
