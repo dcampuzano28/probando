@@ -17,7 +17,7 @@ export const ROUTES: RouteInfo[] = [
     { path: '/notifications', title: 'Notifications',  icon:'notifications', class: '' },
     { path: '/upgrade', title: 'Upgrade to PRO',  icon:'unarchive', class: 'active-pro' },*/
     { path: '/crear', title: 'Crear Actividad',  icon:'unarchive', class: '' },
-    { path: '/eliminar', title: 'Eliminar Actividad',  icon:'dashboard', class: '' },
+    { path: '/eliminar', title: 'Prioridad',  icon:'drag_indicator', class: '' },
     { path: '/login', title: 'Inicio de Sesion',  icon:'person', class: '' },
     { path: '/registro', title: 'Registro',  icon:'library_books', class: '' },
 ];

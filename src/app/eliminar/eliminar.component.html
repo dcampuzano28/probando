@@ -1,9 +1,35 @@
 <div class="main-content">
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                    <p>Eliminar works!</p>
-            </div>
-        </div>
+        <div class="card" style="width: 50rem;">
+				 <div class="card-header card-header-danger">
+						<h4 class="card-title " style="align-content: center;" >Prioridad de tus Actividades</h4>
+						
+                        <p class="card-category">Llena los Espacios </p>
+                        
+                    </div>
+				<div class="card-body" id="Acciones">
+					<div class="input-group">
+							<form>
+								<div class="form-group">
+									<label for="Text">Nombre de tu prioridad</label>
+									<input type="text" class="form-control"   aria-describedby="Nombre de tu prioridad" [(ngModel)]="nom_Prioridad" name="nom_Prioridad">
+									
+								</div>
+								<div class="form-group">
+									<label for="Text">Valor de tu prioridad</label>
+									<input type="text" class="form-control"   aria-describedby="Valor de tu prioridad" [(ngModel)]="val_prioridad" name="val_prioridad">
+									
+								</div>
+							</form>
+					
+					
+					
+					
+					
+                </div>
+                <button type="button" class="btn btn-success" (click)="EnviarP()">Success</button>
+                
+</div>
+  
     </div>
 </div>
