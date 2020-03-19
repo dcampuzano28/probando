@@ -2,7 +2,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
@@ -16,6 +15,7 @@ import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { ServicioActividadService } from './Servicios/servicio-actividad.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { EditarComponent } from './editar/editar.component';
 
 
 
