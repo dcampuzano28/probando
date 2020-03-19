@@ -10,7 +10,7 @@
                     <div class="card-body">
                         <form  class="navbar-form" >
                             <div class="input-group no-border">
-                                <input type="text" value="" class="form-control" placeholder="Nombre de la actividad nueva..."[(ngModel)]="actividad.nombre" name="nombre">
+                                <input type="text" value="" class="form-control" placeholder="Nombre de la actividad nueva..."[(ngModel)]="actividad.nom_actividad" name="nombre">
                                 <!--<button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon">
                                     <i class="material-icons">search</i>
                                     <div class="ripple-container"></div>
@@ -18,10 +18,16 @@
                             </div>
                             
                             <div class="input-group no-border">
-                                <input type="text" value="" class="form-control" placeholder="Dia que se realiza la actividad..."  [(ngModel)]="actividad.dia" name="dia">
+                                <input type="text" value="" class="form-control" placeholder="Dia que se realiza la actividad..."  [(ngModel)]="actividad.dia_actividad" name="dia">
                             </div>
                             <div class="input-group no-border">
-                                <input type="text" value="" class="form-control" [(ngModel)]="actividad.hora" name="hora" placeholder="Hora que se realiza la actividad (de 7 - 21 ej: 8,11 ó 20)..."  >
+                                <input type="text" value="" class="form-control" [(ngModel)]="actividad.hora_actividad" name="hora" placeholder="Hora que se realiza la actividad (de 7 - 21 ej: 8,11 ó 20)..."  >
+                            </div>
+                            <div class="input-group no-border">
+                                <input type="text" value="" class="form-control" [(ngModel)]="actividad.des_actividad" name="descripcion" placeholder="Descripcion"  >
+                            </div>
+                            <div class="input-group no-border">
+                                <input type="text" value="" class="form-control" [(ngModel)]="actividad.id_prioridad" name="prioridad" placeholder="Prioridad"  >
                             </div>
                             <div class="input-group no-border">
                                 <button (click)="crearActividad()" [routerLink]="['/calendario']" type="submit" class="btn btn-white btn-round " style="background-color: rgb(192, 189, 189); color: beige; ">

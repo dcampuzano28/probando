@@ -10,7 +10,8 @@ import 'rxjs/add/operator/catch'
 @Injectable()
 export class ServicioActividadService {
 
-  private url="C:\Users\Johan\Documents\Sergio Arboleda\Semestre 9\SW2\material-dashboard-angular2-master\material-dashboard-angular2-master\src\app\BD\actividades.json"
+//  private url="C:\Users\Johan\Documents\Sergio Arboleda\Semestre 9\SW2\material-dashboard-angular2-master\material-dashboard-angular2-master\src\app\BD\actividades.json"
+  private url = "http://localhost:8000/aplicacion/api/aplicacion/actividad"
   private misActividades:Actividad[]
   
   constructor(protected http:HttpClient) { 
@@ -35,11 +36,12 @@ export class ServicioActividadService {
   }
   nuevaActividad():Actividad{
       return {
-        nombre: '',
-        dia: '',
-        estado: false,
-        descripcion: "",
-        hora:null
+        nom_actividad: '',
+        dia_actividad: '',
+        esta_actividad: false,
+        des_actividad: "",
+        hora_actividad: null,
+        id_prioridad: null,
       };
   }
   addActividad(actividad: Actividad): Observable<any>{
@@ -47,7 +49,7 @@ export class ServicioActividadService {
     let params = "json="+json;
     let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
      
-    return this.http.post(this.url+'productos', params, {headers: headers});
+    return this.http.post(this.url, params, {headers: headers});
 }
 
 }

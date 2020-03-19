@@ -1,7 +1,9 @@
 export interface Actividad{
-    nombre:String
-    dia:String
-    hora:number
-    estado:Boolean
-    descripcion:String
+    hora_actividad:number
+    dia_actividad:String
+    nom_actividad:String
+    des_actividad:String
+    esta_actividad:Boolean
+    id_prioridad:number
+//    id_estudiante:number
 }

@@ -34,13 +34,13 @@ actividades:Actividad[]
 errorMessage:any
 
  ngOnInit() {
-        this.actividades=this.servicioActividad.getActividades()
+/*        this.actividades=this.servicioActividad.getActividades()
         //if(this.actividades)console.log('La ultima actividad creada es: '+this.actividades[this.actividades.length-1].nombre)
         this.servicioActividad.getBDActividades().subscribe(
             actividades => this.actividades =actividades,
             error => this.errorMessage= <any>error
         )
-
+*/
  }
 
  agregarAtividad(actividad:Actividad){

@@ -17,9 +17,8 @@ export class ActividadCrearComponent implements OnInit {
 
   crearActividad(){
     this.servicioActividad.agregarActividad(this.actividad)
-    console.log('Se creo la actividad '+this.actividad.nombre)
-
+    console.log('Se creo la actividad '+this.actividad.nom_actividad)
+    this.servicioActividad.addActividad(this.actividad)
   }
-
 
 }
