@@ -9,6 +9,21 @@ import { Actividad } from '../Clases/Actividad'
 })
 
 export class CalendarioComponent implements OnInit {
+  hora7:any[]
+  hora8: any[]
+  hora9: any[]
+  hora10: any[]
+  hora11: any[]
+  hora12: any[]
+  hora13: any[]
+  hora14: any[]
+  hora15: any[]
+  hora16: any[]
+  hora17: any[]
+  hora18: any[]
+  hora19: any[] 
+  hora20: any[]
+  hora21: any[] 
   actividad:Actividad
   misActividades:Actividad[]
   hora: String="";
@@ -16,6 +31,7 @@ export class CalendarioComponent implements OnInit {
   constructor(private servicioActividad:ServicioActividadService){
     this.misActividades=servicioActividad.getActividades();
     this.actualizardesdeBD();// Aqui se llama el metodo donde la primera vez que se abra a la aplicacion se actualice la tablavista con los valores que de la BD
+    this.inicializarTabla()
   }
 
   ngOnInit(): void {
@@ -25,6 +41,12 @@ export class CalendarioComponent implements OnInit {
     this.hora=this.actividad.hora_actividad
     this.dia=this.actividad.dia_actividad
     this.ComparacionDia(this.dia);
+
+    this.servicioActividad.getBDActividades().subscribe((actividadesBD:Actividad[]) => {
+      this.misActividades = actividadesBD
+    },
+    err =>console.error(err));
+    if(this.misActividades)console.log(this.misActividades[0].nom_actividad+' actividad de bd')
   }
 
 
@@ -42,562 +64,567 @@ export class CalendarioComponent implements OnInit {
       "id_estudiante":2
     },
   ]*/
-  hora7: any[] = [
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-  ]
-  hora8: any[] = [
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-  ]
-  hora9: any[] = [
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-  ]
-  hora10: any[] = [
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-  ]
-  hora11: any[] = [
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-  ]
-  hora12: any[] = [
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-  ]
-  hora13: any[] = [
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-  ]
-  hora14: any[] = [
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-  ]
-  hora15: any[] = [
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-  ]
-  hora16: any[] = [
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-  ]
-  hora17: any[] = [
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-  ]
-  hora18: any[] = [
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-  ]
-  hora19: any[] = [
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-  ]
-  hora20: any[] = [
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-  ]
-  hora21: any[] = [
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-    {
-      "nombre": "",
-      "prioridad": 0,
-      "descripcion": ""
-    },
-  ]
- 
+    inicializarTabla(){
+      this.hora7 = [
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+      ]
+      this.hora8 = [
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+      ]
+      this.hora9= [
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+      ]
+      this.hora10= [
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+      ]
+      this.hora11= [
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+      ]
+      this.hora12 = [
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+      ]
+      this.hora13 = [
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+      ]
+      this.hora14= [
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+      ]
+      this.hora15= [
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+      ]
+      this.hora16= [
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+      ]
+      this.hora17= [
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+      ]
+      this.hora18 = [
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+      ]
+      this.hora19 = [
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+      ]
+      this.hora20 = [
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+      ]
+      this.hora21 = [
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+        {
+          "nombre": "",
+          "prioridad": 0,
+          "descripcion": ""
+        },
+      ]
+     
+    }
+
+  
+  
  
   ComparacionDia(dia: String){
     switch (dia) {
