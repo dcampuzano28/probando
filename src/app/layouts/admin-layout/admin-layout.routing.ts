@@ -10,6 +10,7 @@ import { NotificationsComponent } from '../../notifications/notifications.compon
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { CrearComponent } from 'app/crear/crear.component';
 import { EliminarComponent } from 'app/eliminar/eliminar.component';
+import { Editar } from 'app/editar/editar.component';
 import { LoginComponent } from 'app/login/login.component';
 import { RegistroComponent } from 'app/registro/registro.component';
 

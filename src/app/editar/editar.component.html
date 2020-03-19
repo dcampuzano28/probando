@@ -1,0 +1,51 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="card" style="width: 50rem;">
+  <div class="card-header card-header-danger">
+                        <h4 class="card-title " style="align-content: center;" >Edita tu Actividad</h4>
+                        
+                        
+                    </div><div class="card-body"  >
+					 <form >
+                                            <div class="form-group" >
+                                              <label for="Name">Nombre del actividad a editar</label>
+                                              <input type="name" class="form-control"   [(ngModel)]="NombreC" placeholder="Nombre Actividad" name="NombreC">
+											</div>
+                      </form>
+                      <form>
+												<a href="#" class="btn btn-success" (click)="ConsultarC()"   >Agregar</a>
+													<p class="card-category">Llena los Espacios</p>
+                           
+                                            <div class="form-group" ng-app="app-editar" >
+                                              <label for="Name">Nombre de tu actividad</label>
+                                              <input type="name" class="form-control"   [(ngModel)]="NombreA" placeholder="Nombre Actividad" name="NombreA">
+                                            </div>
+                                            <div class="form-group" ng-app="app-editar">
+                                              <label for="Horas">Horas de tu actividad</label>
+                                              <input type="text" class="form-control"   [(ngModel)]="HorasA" placeholder="Tiempo que tardara tu actividad" name="HorasA">
+                                            </div>
+                                            <div class="form-group" ng-app="app-crear" >
+                                              <label for="Name">Dia </label>
+                                              <input type="name" class="form-control"  [(ngModel)]="Fecha" placeholder="Dia" name="Fecha">
+                                            </div>
+                                           
+                                           <div class="form-group" style="align-content: center;">
+                                               <h5>Selecciona la Prioridad de tu Actividad</h5>
+                                              <button type="button" class="btn btn-outline-success" (click)="prioridadB()" >Baja</button>
+                                              <button type="button" class="btn btn-outline-warning" (click)="prioridadM()"  >Media</button>
+                                              <button type="button" class="btn btn-outline-danger"  (click)="prioridadA()"  >Alta</button>
+                                            </div>
+                                             <div class="form-group" ng-app="app-crear" >
+                                              <label for="Description">Describe Brevemente tu actividad</label>
+                                              <input type="text" class="form-control" id="exampleInputEmail1" ngModel="DescripcionA" placeholder="Descripcion">
+                                              
+                                            </div>
+                                            
+                                          </form>
+                                        </div>
+                                        
+    <a href="#" class="btn btn-success" (click)="Agregar()"   >Agregar</a>
+    </div>
+</div>
+    </div>
+

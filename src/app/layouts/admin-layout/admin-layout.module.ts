@@ -8,6 +8,7 @@ import { UserProfileComponent } from '../../user-profile/user-profile.component'
 import { CalendarioComponent } from '../../Calendario/calendario.component';
 import { CrearComponent } from '../../crear/crear.component';
 import { EliminarComponent } from '../../eliminar/eliminar.component';
+import { Editar } from '../../editar/editar.component';
 import { LoginComponent } from '../../login/login.component';
 import { RegistroComponent } from '../../registro/registro.component';
 import { TypographyComponent } from '../../typography/typography.component';

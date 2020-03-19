@@ -24,6 +24,7 @@ import {
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { CrearComponent } from './crear/crear.component';
 import { EliminarComponent } from './eliminar/eliminar.component';
+import { EditarComponent } from './editar/editar.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 
