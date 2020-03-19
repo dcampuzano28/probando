@@ -13,12 +13,14 @@ export class ActividadCrearComponent implements OnInit {
 
   ngOnInit(): void {
     this.actividad=this.servicioActividad.nuevaActividad()
+    
   }
 
   crearActividad(){
     this.servicioActividad.agregarActividad(this.actividad)
     console.log('Se creo la actividad '+this.actividad.nom_actividad)
     this.servicioActividad.addActividad(this.actividad)
+    this.servicioActividad.setActividad(this.actividad)
   }
 
 }

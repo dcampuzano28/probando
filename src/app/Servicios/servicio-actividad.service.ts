@@ -13,16 +13,22 @@ export class ServicioActividadService {
 //  private url="C:\Users\Johan\Documents\Sergio Arboleda\Semestre 9\SW2\material-dashboard-angular2-master\material-dashboard-angular2-master\src\app\BD\actividades.json"
   private url = "http://localhost:8000/aplicacion/api/aplicacion/actividad"
   private misActividades:Actividad[]
+  private miActividad:Actividad
   
   constructor(protected http:HttpClient) { 
     this.misActividades=[]
   }
-  setActividad(actividades:Actividad[]){
+  setActividades(actividades:Actividad[]){
     this.misActividades=actividades
   }
-
+  setActividad(actividad:Actividad){
+    this.miActividad=actividad
+  }
   getActividades(){
     return this.misActividades
+  }
+  getActividad(){
+    return this.miActividad
   }
   getBDActividades():Observable<Actividad[]>{
     return this.http.get<Actividad[]>(this.url).do(data => console.log('All: '+ JSON.stringify(data))).catch(this.handleError);
@@ -36,12 +42,14 @@ export class ServicioActividadService {
   }
   nuevaActividad():Actividad{
       return {
-        nom_actividad: '',
-        dia_actividad: '',
-        esta_actividad: false,
-        des_actividad: "",
-        hora_actividad: null,
-        id_prioridad: null,
+        "id_actividad": null,
+              "hora_actividad": "",
+                     "dia_actividad": "",  
+                          "nom_actividad" : "",
+                                 "des_actividad": "",
+                                        "estado_actividad": false,
+                                               "id_prioridad" :null,
+                                                      "id_estudiante":1
       };
   }
   addActividad(actividad: Actividad): Observable<any>{
@@ -55,9 +63,20 @@ export class ServicioActividadService {
       "id_prioridad":actividad.id_prioridad
     }]*/
     //let params = "json="+json;
-    let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
+    let headers = new HttpHeaders().set('Content-Type','application/json');
      
     return this.http.post(this.url, json, {headers: headers});
+}
+listarActividades(){
+  //Leer la base de datos get
+  /*
+    for{
+      add.(Avtivid)
+    }
+
+  */
+  let actividades:Actividad[]
+  return this.misActividades=actividades
 }
 
 }
