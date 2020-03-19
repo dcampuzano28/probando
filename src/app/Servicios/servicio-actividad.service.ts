@@ -46,10 +46,18 @@ export class ServicioActividadService {
   }
   addActividad(actividad: Actividad): Observable<any>{
     let json = JSON.stringify(actividad);
-    let params = "json="+json;
+    /*  json1: [{
+      "hora_actividad":actividad.hora_actividad,
+      "dia_actividad":actividad.dia_actividad,
+      "nom_actividad":actividad.nom_actividad,
+      "des_actividad":actividad.des_actividad,
+      "esta_actividad":actividad.esta_actividad,
+      "id_prioridad":actividad.id_prioridad
+    }]*/
+    //let params = "json="+json;
     let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
      
-    return this.http.post(this.url, params, {headers: headers});
+    return this.http.post(this.url, json, {headers: headers});
 }
 
 }

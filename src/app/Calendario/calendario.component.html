@@ -5,10 +5,11 @@
                 <div class="card">
                     <div class="card-header card-header-danger">
                         <h4 class="card-title ">Actividades</h4>
-                        <p class="card-category"> Aqui encontraras tus actividades programadas durante el transcurso de la semana</p>
+                        <p class="card-category"> Aqui encontraras tus actividades programadas durante el transcurso de
+                            la semana</p>
                     </div>
-                    <div class="card-body">  
-                      <div class="table-responsive">
+                    <div class="card-body">
+                        <div class="table-responsive">
                             <table class="table">
                                 <thead class=" text-primary">
                                     <th>
@@ -35,168 +36,302 @@
                                     <th>
                                         Domingo
                                     </th>
-                                  </thead>
-                                  <tbody>
+                                </thead>
+                                <tbody>
                                     <tr>
-                                      <td *ngFor="let hora of hora7; let i = index" >
-                                          <div *ngIf="i == 0" class="text-primary"  >
-                                              {{ hora}}
-                                          </div>
-                                          <div *ngIf="i >= 1"  >
-                                          {{ hora }}
-                                          </div>
-                                      </td>
-                                    </tr>
-                                    <tr>
-                                      <td *ngFor="let hora of hora8; let i = index" >
-                                          <div *ngIf="i == 0" class="text-primary"  >
-                                              {{ hora}}
-                                          </div>
-                                          <div *ngIf="i >= 1"  >
-                                          {{ hora }}
-                                          </div>
-                                      </td>
+                                        <td class="text-primary">
+                                            7:00-8:00
+                                        </td>
+                                        <td *ngFor="let hora of hora7; let i = index">
+                                            <div *ngIf="i == 3">
+                                                <p *ngIf="hora.prioridad === 1" style="color: red;"> {{ hora.nombre}}
+                                                </p>
+                                                <p *ngIf="hora.prioridad === 2" style="color: blue;"> {{ hora.nombre}}
+                                                </p>
+                                                <p *ngIf="hora.prioridad === 3" style="color: green;"> {{ hora.nombre}}
+                                                </p>
+                                                <p>{{ hora.descripcion }}</p>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr>
-                                      <td *ngFor="let hora of hora9; let i = index" >
-                                          <div *ngIf="i == 0" class="text-primary"  >
-                                              {{ hora}}
-                                          </div>
-                                          <div *ngIf="i >= 1"  >
-                                          {{ hora }}
-                                          </div>
-                                      </td>
+                                        <td class="text-primary">
+                                            8:00-9:00
+                                        </td>
+                                        <td *ngFor="let hora of hora8; let i = index">
+                                            <div *ngIf="i == 0" class="text-primary">
+                                                {{ hora.nombre}}
+                                            </div>
+                                            <div *ngIf="i >= 1">
+                                                <p *ngIf="hora.prioridad === 1" style="color: red;"> {{ hora.nombre}}
+                                                </p>
+                                                <p *ngIf="hora.prioridad === 2" style="color: blue;"> {{ hora.nombre}}
+                                                </p>
+                                                <p *ngIf="hora.prioridad === 3" style="color: green;"> {{ hora.nombre}}
+                                                </p>
+                                                <p>{{ hora.descripcion }}</p>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr>
-                                      <td *ngFor="let hora of hora10; let i = index" >
-                                          <div *ngIf="i == 0" class="text-primary"  >
-                                              {{ hora}}
-                                          </div>
-                                          <div *ngIf="i >= 1"  >
-                                          {{ hora }}
-                                          </div>
-                                      </td>
+                                        <td class="text-primary">
+                                            9:00-10:00
+                                        </td>
+                                        <td *ngFor="let hora of hora9; let i = index">
+                                            <div *ngIf="i == 0" class="text-primary">
+                                                {{ hora.nombre}}
+                                            </div>
+                                            <div *ngIf="i >= 1">
+                                                <p *ngIf="hora.prioridad === 1" style="color: red;"> {{ hora.nombre}}
+                                                </p>
+                                                <p *ngIf="hora.prioridad === 2" style="color: blue;"> {{ hora.nombre}}
+                                                </p>
+                                                <p *ngIf="hora.prioridad === 3" style="color: green;"> {{ hora.nombre}}
+                                                </p>
+                                                <p>{{ hora.descripcion }}</p>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr>
-                                      <td *ngFor="let hora of hora11; let i = index" >
-                                          <div *ngIf="i == 0" class="text-primary"  >
-                                              {{ hora}}
-                                          </div>
-                                          <div *ngIf="i >= 1"  >
-                                          {{ hora }}
-                                          </div>
-                                      </td>
+                                        <td class="text-primary">
+                                            10:00-11:00
+                                        </td>
+                                        <td *ngFor="let hora of hora10; let i = index">
+                                            <div *ngIf="i == 0" class="text-primary">
+                                                {{ hora.nombre}}
+                                            </div>
+                                            <div *ngIf="i >= 1">
+                                                <p *ngIf="hora.prioridad === 1" style="color: red;"> {{ hora.nombre}}
+                                                </p>
+                                                <p *ngIf="hora.prioridad === 2" style="color: blue;"> {{ hora.nombre}}
+                                                </p>
+                                                <p *ngIf="hora.prioridad === 3" style="color: green;"> {{ hora.nombre}}
+                                                </p>
+                                                <p>{{ hora.descripcion }}</p>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr>
-                                      <td *ngFor="let hora of hora12; let i = index" >
-                                          <div *ngIf="i == 0" class="text-primary"  >
-                                              {{ hora}}
-                                          </div>
-                                          <div *ngIf="i >= 1"  >
-                                          {{ hora }}
-                                          </div>
-                                      </td>
+                                        <td class="text-primary">
+                                            11:00-12:00
+                                        </td>
+                                        <td *ngFor="let hora of hora11; let i = index">
+                                            <div *ngIf="i == 0" class="text-primary">
+                                                {{ hora.nombre}}
+                                            </div>
+                                            <div *ngIf="i >= 1">
+                                                <p *ngIf="hora.prioridad === 1" style="color: red;"> {{ hora.nombre}}
+                                                </p>
+                                                <p *ngIf="hora.prioridad === 2" style="color: blue;"> {{ hora.nombre}}
+                                                </p>
+                                                <p *ngIf="hora.prioridad === 3" style="color: green;"> {{ hora.nombre}}
+                                                </p>
+                                                <p>{{ hora.descripcion }}</p>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr>
-                                      <td *ngFor="let hora of hora13; let i = index" >
-                                          <div *ngIf="i == 0" class="text-primary"  >
-                                              {{ hora}}
-                                          </div>
-                                          <div *ngIf="i >= 1"  >
-                                          {{ hora }}
-                                          </div>
-                                      </td>
+                                        <td class="text-primary">
+                                            12:00-13:00
+                                        </td>
+                                        <td *ngFor="let hora of hora12; let i = index">
+                                            <div *ngIf="i == 0" class="text-primary">
+                                                {{ hora.nombre}}
+                                            </div>
+                                            <div *ngIf="i >= 1">
+                                                <p *ngIf="hora.prioridad === 1" style="color: red;"> {{ hora.nombre}}
+                                                </p>
+                                                <p *ngIf="hora.prioridad === 2" style="color: blue;"> {{ hora.nombre}}
+                                                </p>
+                                                <p *ngIf="hora.prioridad === 3" style="color: green;"> {{ hora.nombre}}
+                                                </p>
+                                                <p>{{ hora.descripcion }}</p>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr>
-                                      <td *ngFor="let hora of hora14; let i = index" >
-                                          <div *ngIf="i == 0" class="text-primary"  >
-                                              {{ hora}}
-                                          </div>
-                                          <div *ngIf="i >= 1"  >
-                                          {{ hora }}
-                                          </div>
-                                      </td>
-                                    </tr>
-                                    <tr><td *ngFor="let hora of hora15; let i = index" >
-                                      <div *ngIf="i == 0" class="text-primary"  >
-                                          {{ hora}}
-                                      </div>
-                                      <div *ngIf="i >= 1"  >
-                                      {{ hora }}
-                                      </div>
-                                  </td>
-                                    </tr>
-                                    <tr>
-                                      <td *ngFor="let hora of hora16; let i = index" >
-                                          <div *ngIf="i == 0" class="text-primary"  >
-                                              {{ hora}}
-                                          </div>
-                                          <div *ngIf="i >= 1"  >
-                                          {{ hora }}
-                                          </div>
-                                      </td>
+                                        <td class="text-primary">
+                                            13:00-14:00
+                                        </td>
+                                        <td *ngFor="let hora of hora13; let i = index">
+                                            <div *ngIf="i == 0" class="text-primary">
+                                                {{ hora.nombre}}
+                                            </div>
+                                            <div *ngIf="i >= 1">
+                                                <p *ngIf="hora.prioridad === 1" style="color: red;"> {{ hora.nombre}}
+                                                </p>
+                                                <p *ngIf="hora.prioridad === 2" style="color: blue;"> {{ hora.nombre}}
+                                                </p>
+                                                <p *ngIf="hora.prioridad === 3" style="color: green;"> {{ hora.nombre}}
+                                                </p>
+                                                <p>{{ hora.descripcion }}</p>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr>
-                                      <td *ngFor="let hora of hora17; let i = index" >
-                                          <div *ngIf="i == 0" class="text-primary"  >
-                                              {{ hora}}
-                                          </div>
-                                          <div *ngIf="i >= 1"  >
-                                          {{ hora }}
-                                          </div>
-                                      </td>
+                                        <td class="text-primary">
+                                            14:00-15:00
+                                        </td>
+                                        <td *ngFor="let hora of hora14; let i = index">
+                                            <div *ngIf="i == 0" class="text-primary">
+                                                {{ hora.nombre}}
+                                            </div>
+                                            <div *ngIf="i >= 1">
+                                                <p *ngIf="hora.prioridad === 1" style="color: red;"> {{ hora.nombre}}
+                                                </p>
+                                                <p *ngIf="hora.prioridad === 2" style="color: blue;"> {{ hora.nombre}}
+                                                </p>
+                                                <p *ngIf="hora.prioridad === 3" style="color: green;"> {{ hora.nombre}}
+                                                </p>
+                                                <p>{{ hora.descripcion }}</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+  
+                                    <tr>
+                                        <td class="text-primary">
+                                            15:00-16:00
+                                        </td>
+                                        <td *ngFor="let hora of hora15; let i = index">
+                                            <div *ngIf="i == 0" class="text-primary">
+                                                {{ hora.nombre}}
+                                            </div>
+                                            <div *ngIf="i >= 1">
+                                                <p *ngIf="hora.prioridad === 1" style="color: red;"> {{ hora.nombre}}
+                                                </p>
+                                                <p *ngIf="hora.prioridad === 2" style="color: blue;"> {{ hora.nombre}}
+                                                </p>
+                                                <p *ngIf="hora.prioridad === 3" style="color: green;"> {{ hora.nombre}}
+                                                </p>
+                                                <p>{{ hora.descripcion }}</p>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr>
-                                      <td *ngFor="let hora of hora18; let i = index" >
-                                          <div *ngIf="i == 0" class="text-primary"  >
-                                              {{ hora}}
-                                          </div>
-                                          <div *ngIf="i >= 1"  >
-                                          {{ hora }}
-                                          </div>
-                                      </td>
+                                        <td class="text-primary">
+                                            16:00-17:00
+                                        </td>
+                                        <td *ngFor="let hora of hora16; let i = index">
+                                            <div *ngIf="i == 0" class="text-primary">
+                                                {{ hora.nombre}}
+                                            </div>
+                                            <div *ngIf="i >= 1">
+                                                <p *ngIf="hora.prioridad === 1" style="color: red;"> {{ hora.nombre}}
+                                                </p>
+                                                <p *ngIf="hora.prioridad === 2" style="color: blue;"> {{ hora.nombre}}
+                                                </p>
+                                                <p *ngIf="hora.prioridad === 3" style="color: green;"> {{ hora.nombre}}
+                                                </p>
+                                                <p>{{ hora.descripcion }}</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+  
+                                    <tr>
+                                        <td class="text-primary">
+                                            17:00-18:00
+                                        </td>
+                                        <td *ngFor="let hora of hora17; let i = index">
+                                            <div *ngIf="i == 0" class="text-primary">
+                                                {{ hora.nombre}}
+                                            </div>
+                                            <div *ngIf="i >= 1">
+                                                <p *ngIf="hora.prioridad === 1" style="color: red;"> {{ hora.nombre}}
+                                                </p>
+                                                <p *ngIf="hora.prioridad === 2" style="color: blue;"> {{ hora.nombre}}
+                                                </p>
+                                                <p *ngIf="hora.prioridad === 3" style="color: green;"> {{ hora.nombre}}
+                                                </p>
+                                                <p>{{ hora.descripcion }}</p>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr>
-                                      <td *ngFor="let hora of hora19; let i = index" >
-                                          <div *ngIf="i == 0" class="text-primary"  >
-                                              {{ hora}}
-                                          </div>
-                                          <div *ngIf="i >= 1"  >
-                                          {{ hora }}
-                                          </div>
-                                      </td>
+                                        <td class="text-primary">
+                                            18:00-19:00
+                                        </td>
+                                        <td *ngFor="let hora of hora18; let i = index">
+                                            <div *ngIf="i == 0" class="text-primary">
+                                                {{ hora.nombre}}
+                                            </div>
+                                            <div *ngIf="i >= 1">
+                                                <p *ngIf="hora.prioridad === 1" style="color: red;"> {{ hora.nombre}}
+                                                </p>
+                                                <p *ngIf="hora.prioridad === 2" style="color: blue;"> {{ hora.nombre}}
+                                                </p>
+                                                <p *ngIf="hora.prioridad === 3" style="color: green;"> {{ hora.nombre}}
+                                                </p>
+                                                <p>{{ hora.descripcion }}</p>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr>
-                                      <td *ngFor="let hora of hora20; let i = index" >
-                                          <div *ngIf="i == 0" class="text-primary"  >
-                                              {{ hora}}
-                                          </div>
-                                          <div *ngIf="i >= 1"  >
-                                          {{ hora }}
-                                          </div>
-                                      </td>
+                                        <td class="text-primary">
+                                            19:00-20:00
+                                        </td>
+                                        <td *ngFor="let hora of hora19; let i = index">
+                                            <div *ngIf="i == 0" class="text-primary">
+                                                {{ hora.nombre}}
+                                            </div>
+                                            <div *ngIf="i >= 1">
+                                                <p *ngIf="hora.prioridad === 1" style="color: red;"> {{ hora.nombre}}
+                                                </p>
+                                                <p *ngIf="hora.prioridad === 2" style="color: blue;"> {{ hora.nombre}}
+                                                </p>
+                                                <p *ngIf="hora.prioridad === 3" style="color: green;"> {{ hora.nombre}}
+                                                </p>
+                                                <p>{{ hora.descripcion }}</p>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr>
-                                      <td *ngFor="let hora of hora21; let i = index" >
-                                          <div *ngIf="i == 0" class="text-primary"  >
-                                              {{ hora}}
-                                          </div>
-                                          <div *ngIf="i >= 1"  >
-                                          {{ hora }}
-                                          </div>
-                                      </td>
+                                        <td class="text-primary">
+                                            20:00-21:00
+                                        </td>
+                                        <td *ngFor="let hora of hora20; let i = index">
+                                            <div *ngIf="i == 0" class="text-primary">
+                                                {{ hora.nombre}}
+                                            </div>
+                                            <div *ngIf="i >= 1">
+                                                <p *ngIf="hora.prioridad === 1" style="color: red;"> {{ hora.nombre}}
+                                                </p>
+                                                <p *ngIf="hora.prioridad === 2" style="color: blue;"> {{ hora.nombre}}
+                                                </p>
+                                                <p *ngIf="hora.prioridad === 3" style="color: green;"> {{ hora.nombre}}
+                                                </p>
+                                                <p>{{ hora.descripcion }}</p>
+                                            </div>
+                                        </td>
                                     </tr>
-                                   
+                                    <tr>
+                                        <td class="text-primary">
+                                            21:00-22:00
+                                        </td>
+                                        <td *ngFor="let hora of hora21; let i = index">
+                                            <div *ngIf="i == 0" class="text-primary">
+                                                {{ hora.nombre}}
+                                            </div>
+                                            <div *ngIf="i >= 1">
+                                                <p *ngIf="hora.prioridad === 1" style="color: red;"> {{ hora.nombre}}
+                                                </p>
+                                                <p *ngIf="hora.prioridad === 2" style="color: blue;"> {{ hora.nombre}}
+                                                </p>
+                                                <p *ngIf="hora.prioridad === 3" style="color: green;"> {{ hora.nombre}}
+                                                </p>
+                                                <p>{{ hora.descripcion }}</p>
+                                            </div>
+                                        </td>
+                                    </tr>
                                 </tbody>
-                            </table>                           
+                            </table>
                         </div>
-                  </div>
+                    </div>
                 </div>
-               
+  
             </div>
             <div class="col-md-12">
             </div>
         </div>
     </div>
-   </div>
-   
+ </div>
+ 
