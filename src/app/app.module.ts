@@ -14,6 +14,7 @@ import { EliminarComponent } from './eliminar/eliminar.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { ActividadService } from './Servicio/actividad.service';
+import { PrioridadesComponent } from './prioridades/prioridades.component';
 
 @NgModule({
   imports: [
@@ -31,6 +32,7 @@ import { ActividadService } from './Servicio/actividad.service';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    PrioridadesComponent,
   ],
   providers: [ActividadService],
   bootstrap: [AppComponent]

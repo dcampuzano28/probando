@@ -43,7 +43,7 @@
                                             7:00-8:00
                                         </td>
                                         <td *ngFor="let hora of hora7; let i = index">
-                                            <div *ngIf="i >= 0">
+                                            <div *ngIf="i >=0">
                                                 <p *ngIf="hora.prioridad === 1" style="color: red;"> {{ hora.nombre}}
                                                 </p>
                                                 <p *ngIf="hora.prioridad === 2" style="color: blue;"> {{ hora.nombre}}
