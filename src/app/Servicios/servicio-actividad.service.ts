@@ -11,7 +11,7 @@ import 'rxjs/add/operator/catch'
 export class ServicioActividadService {
 
 //  private url="C:\Users\Johan\Documents\Sergio Arboleda\Semestre 9\SW2\material-dashboard-angular2-master\material-dashboard-angular2-master\src\app\BD\actividades.json"
-  private url = "http://localhost:8000/aplicacion/api/aplicacion/actividad"
+  private url = "http://localhost:8000/aplicacion/actividad/"
   private misActividades:Actividad[]
   private miActividad:Actividad
   
@@ -24,6 +24,11 @@ export class ServicioActividadService {
   setActividad(actividad:Actividad){
     this.miActividad=actividad
   }
+
+  getBDActi2(){
+    return this.http.get(this.url,{responseType: "json"})
+  } 
+
   getActividades(){
     return this.misActividades
   }

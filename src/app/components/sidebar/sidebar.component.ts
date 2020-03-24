@@ -14,6 +14,8 @@ export const ROUTES: RouteInfo[] = [
     { path: '/calendario', title: 'Calendario',  icon:'content_paste', class: '' },
     { path: '/actividadcrear', title: 'Nueva Actividad',  icon:'unarchive', class: '' },
     { path: '/editar', title: 'Editar Actividad', icon: 'dashboard', class: ''},
+    { path: '/rendimiento', title: 'Rendimiento', icon: 'assessment', class:'' },
+    { path: '/pagprincipal', title: 'Pagina Principal', icon: 'date_range', class:'' },
     /*{ path: '/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
 >>>>>>> ce8e3574a01a217788f90e828977f68c2f4950b8
     { path: '/user-profile', title: 'User Profile',  icon:'person', class: '' },

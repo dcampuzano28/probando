@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ServicioUsuarioService } from 'app/Servicios/servicio-usuario.service';
+import { Usuario } from 'app/Clases/Usuario';
 
 @Component({
   selector: 'app-registro',
@@ -7,22 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistroComponent implements OnInit {
 
-  nombres:String
-  apellidos:String
-  usuario:String
-  correoelectronico:String
-  carrera:String
-  genero:String
-  contrasena:String
   recontrasena:String
+  miusuario:Usuario
 
-  constructor() { }
+  constructor(private serviciousuario: ServicioUsuarioService) { }
 
   ngOnInit(): void {
+    this.miusuario=this.serviciousuario.nuevousuario()
   }
   validarRegistro(){
-    console.log("Se registro: "+this.nombres)
+    if(this.recontrasena=this.miusuario.con_usuario){
+      console.log("Se registro: "+this.miusuario.nom_estudiante)
+      this.enviarRegistro()
+    }else{
+      console.log("Error, las contraseñas no son iguales")
+    }
   }
 
-
+  enviarRegistro(){
+    this.serviciousuario.addUsuarioBD(this.miusuario)
+  }
 }

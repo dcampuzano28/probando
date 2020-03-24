@@ -15,6 +15,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
 import { ActividadCrearComponent } from 'app/actividad-crear/actividad-crear.component';
+import { RendimientoComponent } from 'app/rendimiento/rendimiento.component';
+import { PagprincipalComponent } from 'app/pagprincipal/pagprincipal.component';
 
 
 @NgModule({
@@ -37,6 +39,8 @@ import { ActividadCrearComponent } from 'app/actividad-crear/actividad-crear.com
     LoginComponent,
     RegistroComponent,
     ActividadCrearComponent,
+    RendimientoComponent,
+    PagprincipalComponent,
   ]
 })
 

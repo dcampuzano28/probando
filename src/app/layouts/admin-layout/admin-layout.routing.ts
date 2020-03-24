@@ -6,6 +6,8 @@ import { LoginComponent } from 'app/login/login.component';
 import { RegistroComponent } from 'app/registro/registro.component';
 import { ActividadCrearComponent } from 'app/actividad-crear/actividad-crear.component';
 import { EditarComponent } from 'app/editar/editar.component';
+import { RendimientoComponent } from 'app/rendimiento/rendimiento.component';
+import { PagprincipalComponent } from 'app/pagprincipal/pagprincipal.component';
 import { Component } from '@angular/core';
 
 
@@ -60,5 +62,8 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'registro',       component: RegistroComponent },
     { path: 'actividadcrear',       component: ActividadCrearComponent },
     { path: 'editar', component: EditarComponent},
+    { path: 'pagprincipal', component: PagprincipalComponent},
+    { path: 'rendimiento', component: RendimientoComponent},
+    
 
 ];

@@ -14,8 +14,11 @@ import { EliminarComponent } from './eliminar/eliminar.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { ServicioActividadService } from './Servicios/servicio-actividad.service';
+import { ServicioUsuarioService } from './Servicios/servicio-usuario.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { EditarComponent } from './editar/editar.component';
+import { RendimientoComponent } from './rendimiento/rendimiento.component';
+import { PagprincipalComponent } from './pagprincipal/pagprincipal.component';
 
 
 
@@ -37,7 +40,7 @@ import { EditarComponent } from './editar/editar.component';
     AppComponent,
     AdminLayoutComponent,
   ],
-  providers: [ServicioActividadService],
+  providers: [ServicioActividadService, ServicioUsuarioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
