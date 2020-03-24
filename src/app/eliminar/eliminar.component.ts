@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./eliminar.component.css']
 })
 export class EliminarComponent implements OnInit {
-
+  NombreA:String
   constructor() { }
 
   ngOnInit(): void {
   }
+Eliminar(){
+alert(this.NombreA);
 
+}
 }

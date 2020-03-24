@@ -54,16 +54,22 @@ export const AdminLayoutRoutes: Routes = [
     //         component: UpgradeComponent
     //     }]
     // }
+<<<<<<< HEAD
 
+=======
+>>>>>>> bf961e017a47a7df391cc9d32321bc7674c65fb6
     { path: 'calendario',     component: CalendarioComponent },
     { path: 'crear',          component: CrearComponent },
     { path: 'eliminar',       component: EliminarComponent },
     { path: 'login',          component: LoginComponent },
     { path: 'registro',       component: RegistroComponent },
+<<<<<<< HEAD
     { path: 'actividadcrear',       component: ActividadCrearComponent },
     { path: 'editar', component: EditarComponent},
     { path: 'pagprincipal', component: PagprincipalComponent},
     { path: 'rendimiento', component: RendimientoComponent},
     
 
+=======
+>>>>>>> bf961e017a47a7df391cc9d32321bc7674c65fb6
 ];

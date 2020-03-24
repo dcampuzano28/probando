@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ServicioActividadService } from 'app/Servicios/servicio-actividad.service';
 //import { ActividadService } from '../Servicio/actividad.service';
 import { Actividad } from '../Clases/Actividad'
+<<<<<<< HEAD
 
+=======
+>>>>>>> bf961e017a47a7df391cc9d32321bc7674c65fb6
 @Component({
   selector: 'app-calendario',
   templateUrl: './calendario.component.html',
@@ -10,6 +13,7 @@ import { Actividad } from '../Clases/Actividad'
 })
 
 export class CalendarioComponent implements OnInit {
+<<<<<<< HEAD
   hora7: any[]
   hora8: any[]
   hora9: any[]
@@ -35,10 +39,20 @@ export class CalendarioComponent implements OnInit {
     this.misActividades = servicioActividad.getActividades();
     //this.actualizardesdeBD();// Aqui se llama el metodo donde la primera vez que se abra a la aplicacion se actualice la tablavista con los valores que de la BD
     this.inicializarTabla()
+=======
+  actividad:Actividad
+  misActividades:Actividad[]
+  hora: string="";
+  dia: string="";
+  constructor(private servicioActividad:ServicioActividadService){
+    this.misActividades=servicioActividad.getActividades();
+    this.actualizardesdeBD();// Aqui se llama el metodo donde la primera vez que se abra a la aplicacion se actualice la tablavista con los valores que de la BD
+>>>>>>> bf961e017a47a7df391cc9d32321bc7674c65fb6
   }
 
   ngOnInit(): void {
     //this.ComparacionHora(this.hora);
+<<<<<<< HEAD
     try {
       this.actividad = this.servicioActividad.getActividad();
       this.hora = this.actividad.hora_actividad
@@ -56,8 +70,862 @@ export class CalendarioComponent implements OnInit {
         this.misActividades=ractividades
     ); 
     //console.log('aqui va, tamaño arreglo: ' +this.jsonres[0]);
+=======
+    
+    this.actividad= this.servicioActividad.getActividad();
+    this.hora=this.actividad.hora_actividad
+    this.dia=this.actividad.dia_actividad
+    this.ComparacionDia(this.dia+"");
   }
 
+  hora7: any[] = [
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+  ]
+  hora8: any[] = [
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+  ]
+  hora9: any[] = [
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+  ]
+  hora10: any[] = [
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+  ]
+  hora11: any[] = [
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+  ]
+  hora12: any[] = [
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+  ]
+  hora13: any[] = [
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+  ]
+  hora14: any[] = [
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+  ]
+  hora15: any[] = [
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+  ]
+  hora16: any[] = [
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+  ]
+  hora17: any[] = [
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+  ]
+  hora18: any[] = [
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+  ]
+  hora19: any[] = [
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+  ]
+  hora20: any[] = [
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+  ]
+  hora21: any[] = [
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+    {
+      "nombre": "",
+      "prioridad": 0,
+      "descripcion": ""
+    },
+  ]
+ 
+ 
+  ComparacionDia(dia: string){
+    switch (dia) {
+      case "lunes":
+        console.log("Lunes.");
+        this.ComparacionHora(this.hora,0);
+        break;
+      case "martes":
+        console.log("Martes.");
+        this.ComparacionHora(this.hora,1);
+        break;
+      case "miercoles":
+        console.log("Miercoles.");
+        this.ComparacionHora(this.hora,2);
+        break;
+      case "jueves":
+        console.log("Jueves.");
+        this.ComparacionHora(this.hora,3);
+        break;
+      case "viernes":
+        console.log("Viernes.");
+        this.ComparacionHora(this.hora,4);
+        break;
+      case "sabado":
+        console.log("Sabado.");
+        this.ComparacionHora(this.hora,5);
+        break;
+      case "domingo":
+        console.log("Domingo.");
+        this.ComparacionHora(this.hora,6);
+        break;
+      default:
+        console.log("No such day exists!");
+        break;
+    }
+>>>>>>> bf961e017a47a7df391cc9d32321bc7674c65fb6
+  }
+  
+  ComparacionHora(hora: string, dia: number) {
+    switch (hora) {
+      case "7":
+        console.log(this.hora7);
+        var a = this.hora7[dia];
+        var b = this.actividad;
+        console.log("Hola");
+        console.log(a);
+        console.log("Hola222");
+        console.log(b);
+        a.nombre = b.nom_actividad;
+        a.prioridad= b.id_prioridad;
+        a.descripcion=b.des_actividad;
+        console.log("Hola");
+        console.log(a);
+        console.log("Hola222");
+        console.log(b);
+        break;
+      case "8":
+        console.log(this.hora8);
+        var a = this.hora8[dia];
+        var b = this.actividad;
+        console.log("Hola");
+        console.log(a);
+        console.log("Hola222");
+        console.log(b);
+        a.nombre = b.nom_actividad;
+        a.prioridad= b.id_prioridad;
+        a.descripcion=b.des_actividad;
+        console.log("Hola");
+        console.log(a);
+        console.log("Hola222");
+        console.log(b);
+        break;
+      case "9":
+        console.log(this.hora9);
+        var a = this.hora9[dia];
+        var b = this.actividad;
+        console.log("Hola");
+        console.log(a);
+        console.log("Hola222");
+        console.log(b);
+        a.nombre = b.nom_actividad;
+        a.prioridad= b.id_prioridad;
+        a.descripcion=b.des_actividad;
+        console.log("Hola");
+        console.log(a);
+        console.log("Hola222");
+        console.log(b);
+        break;
+      case "10":
+        console.log(this.hora10);
+        var a = this.hora10[dia];
+        var b = this.actividad;
+        console.log("Hola");
+        console.log(a);
+        console.log("Hola222");
+        console.log(b);
+        a.nombre = b.nom_actividad;
+        a.prioridad= b.id_prioridad;
+        a.descripcion=b.des_actividad;
+        console.log("Hola");
+        console.log(a);
+        console.log("Hola222");
+        console.log(b);
+        break;
+      case "11":
+        console.log(this.hora11);
+        var a = this.hora11[dia];
+        var b = this.actividad;
+        console.log("Hola");
+        console.log(a);
+        console.log("Hola222");
+        console.log(b);
+        a.nombre = b.nom_actividad;
+        a.prioridad= b.id_prioridad;
+        a.descripcion=b.des_actividad;
+        console.log("Hola");
+        console.log(a);
+        console.log("Hola222");
+        console.log(b);
+        break;
+      case "12":
+        console.log(this.hora12);
+        var a = this.hora12[dia];
+        var b = this.actividad;
+        console.log("Hola");
+        console.log(a);
+        console.log("Hola222");
+        console.log(b);
+        a.nombre = b.nom_actividad;
+        a.prioridad= b.id_prioridad;
+        a.descripcion=b.des_actividad;
+        console.log("Hola");
+        console.log(a);
+        console.log("Hola222");
+        console.log(b);
+        break;
+      case "13":
+        console.log(this.hora13);
+        var a = this.hora13[dia];
+        var b = this.actividad;
+        console.log("Hola");
+        console.log(a);
+        console.log("Hola222");
+        console.log(b);
+        a.nombre = b.nom_actividad;
+        a.prioridad= b.id_prioridad;
+        a.descripcion=b.des_actividad;
+        console.log("Hola");
+        console.log(a);
+        console.log("Hola222");
+        console.log(b);
+        break;
+      case "14":
+        console.log(this.hora14);
+        var a = this.hora14[dia];
+        var b = this.actividad;
+        console.log("Hola");
+        console.log(a);
+        console.log("Hola222");
+        console.log(b);
+        a.nombre = b.nom_actividad;
+        a.prioridad= b.id_prioridad;
+        a.descripcion=b.des_actividad;
+        console.log("Hola");
+        console.log(a);
+        console.log("Hola222");
+        console.log(b);
+        break;
+      case "15":
+        console.log(this.hora15);
+        var a = this.hora15[dia];
+        var b = this.actividad;
+        console.log("Hola");
+        console.log(a);
+        console.log("Hola222");
+        console.log(b);
+        a.nombre = b.nom_actividad;
+        a.prioridad= b.id_prioridad;
+        a.descripcion=b.des_actividad;
+        console.log("Hola");
+        console.log(a);
+        console.log("Hola222");
+        console.log(b);
+        break;
+      case "16":
+        console.log(this.hora16);
+        var a = this.hora16[dia];
+        var b = this.actividad;
+        console.log("Hola");
+        console.log(a);
+        console.log("Hola222");
+        console.log(b);
+        a.nombre = b.nom_actividad;
+        a.prioridad= b.id_prioridad;
+        a.descripcion=b.des_actividad;
+        console.log("Hola");
+        console.log(a);
+        console.log("Hola222");
+        console.log(b);
+        break;
+      case "17":
+        console.log(this.hora17);
+        var a = this.hora17[dia];
+        var b = this.actividad;
+        console.log("Hola");
+        console.log(a);
+        console.log("Hola222");
+        console.log(b);
+        a.nombre = b.nom_actividad;
+        a.prioridad= b.id_prioridad;
+        a.descripcion=b.des_actividad;
+        console.log("Hola");
+        console.log(a);
+        console.log("Hola222");
+        console.log(b);
+        break;
+      case "18":
+        console.log(this.hora18);
+        var a = this.hora18[dia];
+        var b = this.actividad;
+        console.log("Hola");
+        console.log(a);
+        console.log("Hola222");
+        console.log(b);
+        a.nombre = b.nom_actividad;
+        a.prioridad= b.id_prioridad;
+        a.descripcion=b.des_actividad;
+        console.log("Hola");
+        console.log(a);
+        console.log("Hola222");
+        console.log(b);
+        break;
+      case "19":
+        console.log(this.hora19);
+        var a = this.hora19[dia];
+        var b = this.actividad;
+        console.log("Hola");
+        console.log(a);
+        console.log("Hola222");
+        console.log(b);
+        a.nombre = b.nom_actividad;
+        a.prioridad= b.id_prioridad;
+        a.descripcion=b.des_actividad;
+        console.log("Hola");
+        console.log(a);
+        console.log("Hola222");
+        console.log(b);
+        break;
+      case "20":
+        console.log(this.hora20);
+        var a = this.hora20[dia];
+        var b = this.actividad
+        console.log("Hola");
+        console.log(a);
+        console.log("Hola222");
+        console.log(b);
+        a.nombre = b.nom_actividad;
+        a.prioridad= b.id_prioridad;
+        a.descripcion=b.des_actividad;
+        console.log("Hola");
+        console.log(a);
+        console.log("Hola222");
+        console.log(b);
+        break;
+      case "21":
+        console.log(this.hora21);
+        var a = this.hora21[dia];
+        var b = this.actividad;
+        console.log("Hola");
+        console.log(a);
+        console.log("Hola222");
+        console.log(b);
+        a.nombre = b.nom_actividad;
+        a.prioridad= b.id_prioridad;
+        a.descripcion=b.des_actividad;
+        console.log("Hola");
+        console.log(a);
+        console.log("Hola222");
+        console.log(b);
+        break;
+      default:
+        console.log("Error en la hora");
+        break;
+    }
+  }
+ 
+ actualizardesdeBD(){
+
+ }
+ nuevaActividadTabla(){
+
+<<<<<<< HEAD
   /*respuesta : any[] =[
     {
       "id_actividad": 1,
@@ -914,4 +1782,8 @@ export class CalendarioComponent implements OnInit {
   nuevaActividadTabla() {
 
   }
+=======
+ }
+>>>>>>> bf961e017a47a7df391cc9d32321bc7674c65fb6
 }
+

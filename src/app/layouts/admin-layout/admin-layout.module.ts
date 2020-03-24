@@ -38,9 +38,12 @@ import { PagprincipalComponent } from 'app/pagprincipal/pagprincipal.component';
     EliminarComponent,
     LoginComponent,
     RegistroComponent,
+<<<<<<< HEAD
     ActividadCrearComponent,
     RendimientoComponent,
     PagprincipalComponent,
+=======
+>>>>>>> bf961e017a47a7df391cc9d32321bc7674c65fb6
   ]
 })
 
