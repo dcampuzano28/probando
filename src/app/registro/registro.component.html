@@ -1,0 +1,98 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Registro</h4>
+                        <p class="card-category"> LLena este formulario si eres nuevo en nuestra aplicación!!</p>
+                    </div>
+                    <!--div class="card-body" id="form_left">
+                            <form class="navbar-form" id="form_left">
+                                <div class="input-group no-border">
+                                    <input type="text" value="" class="form-control" placeholder="Nombres..."
+                                        [(ngModel)]="nombres" name="nombres">
+                                </div>
+                                <div class="input-group no-border">
+                                    <input type="text" value="" class="form-control" placeholder="Apellidos..."
+                                        [(ngModel)]="apellidos" name="apellidos">
+                                </div>
+                                <div class="input-group no-border">
+                                    <input type="text" value="" class="form-control" placeholder="Correo Electronico..."
+                                        [(ngModel)]="correoelectronico" name="correoelectronico">
+                                </div>
+                                <div class="input-group no-border">
+                                    <input type="text" value="" class="form-control"
+                                        placeholder="Carrera que estudias..." [(ngModel)]="carrera" name="carrera">
+                                </div>
+                                <div class="input-group no-border">
+                                    <input type="text" value="" class="form-control" placeholder="Nombre de Usuario..."
+                                        [(ngModel)]="usuario" name="usuario">
+                                </div>
+                                <div class="input-group no-border">
+                                    <input type="password" value="" class="form-control" placeholder="Contraseña..."
+                                        [(ngModel)]="contrasena" name="contrasena">
+                                </div>
+                                <div class="input-group no-border">
+                                    <input type="password" value="" class="form-control"
+                                        placeholder="Repetir contraseña..." [(ngModel)]="recontrasena"
+                                        name="recontrasena">
+                                </div>
+                                <div class="input-group no-border">
+                                    <button (click)="validarRegistro()" [routerLink]="['/login']" type="submit"
+                                        class="btn btn-white btn-round "
+                                        style="background-color: rgb(192, 189, 189); color: beige; ">
+                                        Registrarme
+                                    </button>
+                                </div>
+                             </form>
+                        </div>
+                    </div-->
+                    <div class="card-body">
+                        <div class="input-group no-border  d-flex float-right justify-content-around align-items-right">
+                            <img src="https://raw.githubusercontent.com/LauraGarcia7/Imagenes-Software/master/Logo.png">
+                            <form class="navbar-form">
+                                <div class="input-group no-border">
+                                    <input type="text" value="" class="form-control" placeholder="Nombres..."
+                                        [(ngModel)]="miusuario.first_name" name="nombres">
+                                </div>
+                                <div class="input-group no-border">
+                                    <input type="text" value="" class="form-control" placeholder="Apellidos..."
+                                        [(ngModel)]="miusuario.last_name" name="apellidos">
+                                </div>
+                                <div class="input-group no-border">
+                                    <input type="text" value="" class="form-control" placeholder="Correo Electronico..."
+                                        [(ngModel)]="miusuario.email" name="correoelectronico">
+                                </div>
+                                <div class="input-group no-border">
+                                    <input type="text" value="" class="form-control"
+                                        placeholder="Carrera... " [(ngModel)]="miusuario.carr_estudiante" name="carrera">
+                                </div>
+                                <div class="input-group no-border">
+                                    <input type="text" value="" class="form-control" placeholder="Nombre de Usuario..."
+                                        [(ngModel)]="miusuario.username" name="usuario">
+                                </div>
+                                <div class="input-group no-border">
+                                    <input type="password" value="" class="form-control" placeholder="Contraseña..."
+                                        [(ngModel)]="miusuario.password" name="contrasena">
+                                </div>
+                                <div class="input-group no-border">
+                                    <input type="password" value="" class="form-control"
+                                        placeholder="Repetir contraseña..." [(ngModel)]="recontrasena"
+                                        name="recontrasena">
+                                </div>
+                                <div class="input-group no-border">
+                                    <button (click)="validarRegistro()" [routerLink]="['/login']" type="submit"
+                                        class="btn btn-white btn-round "
+                                        style="background-color: rgb(192, 189, 189); color: beige; ">
+                                        Registrarme
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

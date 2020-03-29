@@ -1,0 +1,16 @@
+[
+    {
+        "nombre":"Rascarse",
+        "dia":"Lunes",
+        "hora":7,
+        "estado":false,
+        "descripcion":"una descripcion"
+    },
+    {
+        "nombre":"Dormir",
+        "dia":"Martes",
+        "hora":8,
+        "estado":true,
+        "descripcion":"una descripcion2"
+    }
+]
