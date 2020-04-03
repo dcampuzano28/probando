@@ -1,48 +1,884 @@
 <div class="main-content">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header card-header-danger">
-                        <h4 class="card-title ">Nueva actividad</h4>
-                        <p class="card-category"> en este espacio se va a crear una nueva actividad</p>
-                    </div>
-                    <div class="card-body">
-                        <form  class="navbar-form" >
-                            <div class="input-group no-border">
-                                <input type="text" value="" class="form-control" placeholder="Nombre de la actividad nueva..."[(ngModel)]="actividad.nom_actividad" name="nombre">
-                                <!--<button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon">
-                                    <i class="material-icons">search</i>
-                                    <div class="ripple-container"></div>
-                                </button>-->
-                            </div>
-                            
-                            <div class="input-group no-border">
-                                <input type="text" value="" class="form-control" placeholder="Dia que se realiza la actividad..."  [(ngModel)]="actividad.dia_actividad" name="dia">
-                            </div>
-                            <div class="input-group no-border">
-                                <input type="text" value="" class="form-control" [(ngModel)]="actividad.hora_actividad" name="hora" placeholder="Hora que se realiza la actividad (de 7 - 21 ej: 8,11 ó 20)..."  >
-                            </div>
-                            <div class="input-group no-border">
-                                <input type="text" value="" class="form-control" [(ngModel)]="actividad.des_actividad" name="descripcion" placeholder="Descripcion"  >
-                            </div>
-                            <div class="input-group no-border">
-                                <input type="text" value="" class="form-control" [(ngModel)]="actividad.id_prioridad" name="prioridad" placeholder="Prioridad"  >
-                            </div>
-                            <div class="input-group no-border">
-                                <button (click)="crearActividad()" [routerLink]="['/calendario']" type="submit" class="btn btn-white btn-round " style="background-color: rgb(192, 189, 189); color: beige; ">
-                                    Crear
-                                    
-                                </button>
-                                
-                            </div>
-                            
-                        </form>
-                    </div>
-                </div>
-            </div>
+ 
 
-        </div>
+    <div class="container-fluid">
+<div class="card-body" id="body">
+
+<div class="card" style="width: 83rem; right:275px ;bottom: 100px;">
+  <div class="card-header card-header-danger" >
+    <h3>Crear Actividad</h3>
+                        </div>
+  <div class="card-body" >
+    
+        <div id="accordion"  >
+  <div class="card " style="width: 75rem; left: 40px; bottom: 40px;">
+     <div class="card-header" style="background-color: lightgreen;">
+                      <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <div class="btn-group dropleft" >
+              <h2><i class="3d_rotation"></i> Lunes</h2>  
+  <button type="button" (click)=" lunes();  "  class="btn pmd-btn-fab pmd-ripple-effect btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="position: relative; left:920px; bottom: 35px; background-color: #ff8a80; z-index:1; ">
+   Nueva Tarea
+  </button>
+  <div class="dropdown-menu" id="formulario" value="lunes"  >
+      <form class="px-3 py-12" style="width: 300px;">
+                                            <div class="form-group" ng-app="app-crear"  >
+                                              <h6 >Nombre de tu actividad </h6>
+                                              <input type="name" class="form-control"   [(ngModel)]="NombreA" placeholder="Nombre Actividad" name="NombreA">
+                                            </div>
+                                            <div class="form-group"   >
+                                              <h6 Motivacion </h6>
+                                              <input type="name" class="form-control"   [(ngModel)]="Motivacion" placeholder="Nombre Actividad" name="Motivacion">
+                                            </div>
+                                            <div class="form-group" ng-app="app-crear">
+                                              <div class="row">
+                                              <div class="form-group" style="position :relative; left: 15%;">
+                                                
+                                                       <h6>Hora Inicio </h6>
+                                                        <select class="form-control" id="exampleFormControlSelect1"  >
+                                                          <option value="1"  >1:00pm</option>
+                                                          <option value="2"  >2:00pm</option>
+                                                          <option value="3"  >3:00pm</option>
+                                                          <option value="4" >4:00pm</option>
+                                                          <option value="5" >5:00pm</option>
+                                                          <option value="6" >6:00pm</option>
+                                                          <option value="7" >7:00pm</option>
+                                                          <option value="8" >8:00pm</option>
+                                                          <option value="9" >9:00pm</option>
+                                                          <option value="10" >10:00pm</option>
+                                                          <option value="11" >11:00pm</option>
+                                                          <option value="12" >12:00pm</option>
+                                                        </select>
+                                                      </div>
+                                                      <div class="row">
+
+                                                         <div class="form-group" style="position :absolute; right: 15%;" >
+                                                
+                                                       <h6>Hora Fin </h6>
+                                                        <select class="form-control" id="exampleFormControlSelect2"  >
+                                                          <option value="1"  >1:00pm</option>
+                                                          <option value="2"  >2:00pm</option>
+                                                          <option value="3"  >3:00pm</option>
+                                                          <option value="4" >4:00pm</option>
+                                                          <option value="5" >5:00pm</option>
+                                                          <option value="6" >6:00pm</option>
+                                                          <option value="7" >7:00pm</option>
+                                                          <option value="8" >8:00pm</option>
+                                                          <option value="9" >9:00pm</option>
+                                                          <option value="10" >10:00pm</option>
+                                                          <option value="11" >11:00pm</option>
+                                                          <option value="12" >12:00pm</option>
+                                                        </select>
+                                                      </div>
+                                                      </div>
+                                                   </div>
+                                                </div>   
+                                            <div class="form-group" style="align-content: center;">
+                                               <h6>Selecciona la Prioridad </h6>
+                                                        <select class="form-control" id="exampleFormControlSelect3"  >
+                                                          <option value="1" >Baja</option>
+                                                          <option value="2" >Media</option>
+                                                          <option value="3" >Alta</option>
+                                                        </select>
+                                              
+                                            </div>
+                                             <div class="form-group" ng-app="app-crear" >
+                                             <h6 >Descripcion de tu actividad </h6>
+                                              <input type="text" class="form-control"  [(ngModel)]="DescripcionA" name="DescripcionA">
+                                              
+                                            </div>
+                                            <button type="button" class="btn btn-success btn-circle btn-lg"  (click)="Agregar()" onclick="agregarD2()"><i class="fa fa-check"></i>
+                            </button>
+                                          </form>
+  </div>
+</div>
+        </button>
+                    </div>
+                              
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion" >
+      <div class="card-body" id="body">
+<div class="row" id="probando1">
+<div class="card" style="width: 18rem;">
+  <div class="card-header card-header-danger" id="pruebaN" >
+                        </div>
+  <div class="card-body" >
+    <h5>Descripcion de tu Actividad</h5>
+    <ul class="list-group list-group-flush">
+
+      <li class="list-group-item" id="cuerpoT">
+     
+    </li>
+    <li class="list-group-item">
+      <p>   </p>
+    <div class="container">
+  <div class="round">
+    <input type="checkbox" id="checkbox" />
+    <label for="checkbox"></label>
+  </div>
+</div>
+   
+     <button type="button" class="btn btn-danger btn-circle btn-lg" ><i class="fa fa-wrench "   (click)="agregandoNuevas()"   ></i></button>
+
+     <button type="button" class="btn btn-danger btn-circle btn-lg" (click)="eliminar()" ><i class="fa fa-trash "></i></button> 
+    </li>
+    
+  </ul>
+  </div>
+</div>
+
+
+
     </div>
+    </div>
+  </div>
+  
+  
+</div>
+ <div id="accordion">
+  <div class="card " style="width: 75rem; left: 40px; bottom: 40px;">
+     <div class="card-header" style="background-color: lightgreen;">
+                      <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+          <div class="btn-group dropleft" >
+              <h2><i class="3d_rotation"></i> Martes</h2>  
+  <button type="button" class="btn btn-secondary dropdown-toggle" (click)=" martes();" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="position: relative; left:890px; bottom: 35px;  background-color: #ff8a80; ">
+   Nueva Tarea
+  </button>
+  <div class="dropdown-menu">
+      <form class="px-3 py-12" style="width: 300px;">
+                                            <div class="form-group" >
+                                              <h6>Nombre de tu actividad </h6>
+                                              <input type="name" class="form-control"   [(ngModel)]="NombreA" placeholder="Nombre Actividad" name="NombreA">
+                                            </div>
+                                            <div class="form-group" >
+                                              <div class="row">
+                                              <div class="form-group" style="position :relative; left: 15%;">
+                                                
+                                                       <h6>Hora Inicio </h6>
+                                                        <select class="form-control" id="exampleFormControlSelect1"  >
+                                                          <option value="1"  >1:00pm</option>
+                                                          <option value="2"  >2:00pm</option>
+                                                          <option value="3"  >3:00pm</option>
+                                                          <option value="4" >4:00pm</option>
+                                                          <option value="5" >5:00pm</option>
+                                                          <option value="6" >6:00pm</option>
+                                                          <option value="7" >7:00pm</option>
+                                                          <option value="8" >8:00pm</option>
+                                                          <option value="9" >9:00pm</option>
+                                                          <option value="10" >10:00pm</option>
+                                                          <option value="11" >11:00pm</option>
+                                                          <option value="12" >12:00pm</option>
+                                                        </select>
+                                                      </div>
+                                                      <div class="row">
+
+                                                         <div class="form-group" style="position :absolute; right: 15%;" >
+                                                
+                                                       <h6>Hora Fin </h6>
+                                                        <select class="form-control" id="exampleFormControlSelect2"  >
+                                                          <option value="1"  >1:00pm</option>
+                                                          <option value="2"  >2:00pm</option>
+                                                          <option value="3"  >3:00pm</option>
+                                                          <option value="4" >4:00pm</option>
+                                                          <option value="5" >5:00pm</option>
+                                                          <option value="6" >6:00pm</option>
+                                                          <option value="7" >7:00pm</option>
+                                                          <option value="8" >8:00pm</option>
+                                                          <option value="9" >9:00pm</option>
+                                                          <option value="10" >10:00pm</option>
+                                                          <option value="11" >11:00pm</option>
+                                                          <option value="12" >12:00pm</option>
+                                                        </select>
+                                                      </div>
+                                                      </div>
+                                                   </div>
+                                                </div>   
+                                            <div class="form-group" style="align-content: center;">
+                                               <h6>Selecciona la Prioridad </h6>
+                                                        <select class="form-control" id="exampleFormControlSelect3"  >
+                                                          <option value="1" >Baja</option>
+                                                          <option value="2" >Media</option>
+                                                          <option value="3" >Alta</option>
+                                                        </select>
+                                              
+                                            </div>
+                                             <div class="form-group"  >
+                                             <h6 >Descripcion de tu actividad </h6>
+                                              <input type="text" class="form-control"  [(ngModel)]="DescripcionA" name="DescripcionA">
+                                              
+                                            </div>
+                                            <button type="button" class="btn btn-success btn-circle btn-lg"  (click)="Agregar()" onclick="agregarD"><i class="fa fa-check"></i>
+                            </button>
+                                          </form>
+  </div>
+</div>
+        </button>
+                    </div>
+                              
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+      
+      <div class="card-body">
+<div class="row" id="probando2">
+<div class="card" style="width: 18rem;">
+  <div class="card-header card-header-danger" id="pruebaN2" >
+                        </div>
+  <div class="card-body" >
+   <h5>Descripcion de tu Actividad</h5>
+    <ul class="list-group list-group-flush">
+
+      <li class="list-group-item" id="cuerpoT2">
+     
+    </li>
+    <li class="list-group-item">
+       <p>   </p>
+    <div class="container">
+  <div class="round">
+    <input type="checkbox" id="checkbox" />
+    <label for="checkbox"></label>
+  </div>
+</div>
+   
+     <button type="button" class="btn btn-danger btn-circle btn-lg" ><i class="fa fa-wrench "></i></button>
+
+     <button type="button" class="btn btn-danger btn-circle btn-lg" ><i class="fa fa-trash "></i></button> 
+    </li>
+    
+  </ul>
+  </div>
+</div>
+
+
+
+    </div>
+    </div>
+    </div>
+  </div>
+  
+  
+</div>
+   
+
+
+ <div id="accordion">
+  <div class="card " style="width: 75rem; left: 40px; bottom: 40px;">
+     <div class="card-header" style="background-color: lightgreen;">
+                      <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <div class="btn-group dropleft" >
+              <h2><i class="3d_rotation"></i> Miercoles</h2>  
+  <button type="button" class="btn btn-secondary dropdown-toggle" (click)=" miercoles();"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="position: relative; left:840px; bottom: 35px;; background-color: #ff8a80; ">
+   Nueva Tarea
+  </button>
+ <div class="dropdown-menu">
+      <form class="px-3 py-12" style="width: 300px;">
+                                           <div class="form-group"   >
+                                              <h6 >Nombre de tu actividad </h6>
+                                              <input type="name" class="form-control"   [(ngModel)]="NombreA" placeholder="Nombre Actividad" name="NombreA">
+                                            </div>
+                                            <div class="form-group" >
+                                              <div class="row">
+                                              <div class="form-group" style="position :relative; left: 15%;">
+                                                
+                                                       <h6>Hora Inicio </h6>
+                                                        <select class="form-control" id="exampleFormControlSelect1"  >
+                                                          <option value="1"  >1:00pm</option>
+                                                          <option value="2"  >2:00pm</option>
+                                                          <option value="3"  >3:00pm</option>
+                                                          <option value="4" >4:00pm</option>
+                                                          <option value="5" >5:00pm</option>
+                                                          <option value="6" >6:00pm</option>
+                                                          <option value="7" >7:00pm</option>
+                                                          <option value="8" >8:00pm</option>
+                                                          <option value="9" >9:00pm</option>
+                                                          <option value="10" >10:00pm</option>
+                                                          <option value="11" >11:00pm</option>
+                                                          <option value="12" >12:00pm</option>
+                                                        </select>
+                                                      </div>
+                                                      <div class="row">
+
+                                                         <div class="form-group" style="position :absolute; right: 15%;" >
+                                                
+                                                       <h6>Hora Fin </h6>
+                                                        <select class="form-control" id="exampleFormControlSelect2"  >
+                                                          <option value="1"  >1:00pm</option>
+                                                          <option value="2"  >2:00pm</option>
+                                                          <option value="3"  >3:00pm</option>
+                                                          <option value="4" >4:00pm</option>
+                                                          <option value="5" >5:00pm</option>
+                                                          <option value="6" >6:00pm</option>
+                                                          <option value="7" >7:00pm</option>
+                                                          <option value="8" >8:00pm</option>
+                                                          <option value="9" >9:00pm</option>
+                                                          <option value="10" >10:00pm</option>
+                                                          <option value="11" >11:00pm</option>
+                                                          <option value="12" >12:00pm</option>
+                                                        </select>
+                                                      </div>
+                                                      </div>
+                                                   </div>
+                                                </div>   
+                                            <div class="form-group" style="align-content: center;">
+                                               <h6>Selecciona la Prioridad </h6>
+                                                        <select class="form-control" id="exampleFormControlSelect3"  >
+                                                          <option value="1" >Baja</option>
+                                                          <option value="2" >Media</option>
+                                                          <option value="3" >Alta</option>
+                                                        </select>
+                                              
+                                            </div>
+                                             <div class="form-group" ng-app="app-crear" >
+                                             <h6 >Descripcion de tu actividad </h6>
+                                              <input type="text" class="form-control"  [(ngModel)]="DescripcionA" name="DescripcionA">
+                                              
+                                            </div>
+                                            <button type="button" class="btn btn-success btn-circle btn-lg"  (click)="Agregar()" onclick="agregarD"><i class="fa fa-check"></i>
+                            </button>
+                                          </form>
+  </div>
+</div>
+        </button>
+                    </div>
+                              
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+<div class="row" id="probando3">
+<div class="card" style="width: 18rem;">
+  <div class="card-header card-header-danger" id="pruebaN3" >
+                        </div>
+  <div class="card-body" >
+   <h5>Descripcion de tu Actividad</h5>
+    <ul class="list-group list-group-flush">
+
+      <li class="list-group-item" id="cuerpoT3">
+     
+    </li>
+    <li class="list-group-item">
+       <p>   </p>
+   <div class="container">
+  <div class="round">
+    <input type="checkbox" id="checkbox" />
+    <label for="checkbox"></label>
+  </div>
+</div>
+   
+     <button type="button" class="btn btn-danger btn-circle btn-lg" ><i class="fa fa-wrench "></i></button>
+
+     <button type="button" class="btn btn-danger btn-circle btn-lg" ><i class="fa fa-trash "></i></button> 
+    </li>
+    
+  </ul>
+  </div>
+</div>
+
+
+
+    </div>
+    </div>
+  </div>
+  
+  
+</div>
+   
+
+
+ <div id="accordion">
+  <div class="card " style="width: 75rem; left: 40px; bottom: 40px;">
+     <div class="card-header" style="background-color: lightgreen;">
+                      <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <div class="btn-group dropleft" >
+              <h2><i class="3d_rotation"></i> Jueves</h2>  
+  <button type="button" class="btn btn-secondary dropdown-toggle" (click)=" jueves();" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="position: relative; left:900px; bottom: 35px;  background-color: #ff8a80; ">
+   Nueva Tarea
+  </button>
+  <div class="dropdown-menu">
+     <form class="px-3 py-12" style="width: 300px;">
+                                             <div class="form-group"   >
+                                              <h6 >Nombre de tu actividad </h6>
+                                              <input type="name" class="form-control"   [(ngModel)]="NombreA" placeholder="Nombre Actividad" name="NombreA">
+                                            </div>
+                                            <div class="form-group" >
+                                              <div class="row">
+                                              <div class="form-group" style="position :relative; left: 15%;">
+                                                
+                                                       <h6>Hora Inicio </h6>
+                                                        <select class="form-control" id="exampleFormControlSelect1"  >
+                                                          <option value="1"  >1:00pm</option>
+                                                          <option value="2"  >2:00pm</option>
+                                                          <option value="3"  >3:00pm</option>
+                                                          <option value="4" >4:00pm</option>
+                                                          <option value="5" >5:00pm</option>
+                                                          <option value="6" >6:00pm</option>
+                                                          <option value="7" >7:00pm</option>
+                                                          <option value="8" >8:00pm</option>
+                                                          <option value="9" >9:00pm</option>
+                                                          <option value="10" >10:00pm</option>
+                                                          <option value="11" >11:00pm</option>
+                                                          <option value="12" >12:00pm</option>
+                                                        </select>
+                                                      </div>
+                                                      <div class="row">
+
+                                                         <div class="form-group" style="position :absolute; right: 15%;" >
+                                                
+                                                       <h6>Hora Fin </h6>
+                                                        <select class="form-control" id="exampleFormControlSelect2"  >
+                                                          <option value="1"  >1:00pm</option>
+                                                          <option value="2"  >2:00pm</option>
+                                                          <option value="3"  >3:00pm</option>
+                                                          <option value="4" >4:00pm</option>
+                                                          <option value="5" >5:00pm</option>
+                                                          <option value="6" >6:00pm</option>
+                                                          <option value="7" >7:00pm</option>
+                                                          <option value="8" >8:00pm</option>
+                                                          <option value="9" >9:00pm</option>
+                                                          <option value="10" >10:00pm</option>
+                                                          <option value="11" >11:00pm</option>
+                                                          <option value="12" >12:00pm</option>
+                                                        </select>
+                                                      </div>
+                                                      </div>
+                                                   </div>
+                                                </div>   
+                                            <div class="form-group" style="align-content: center;">
+                                               <h6>Selecciona la Prioridad </h6>
+                                                        <select class="form-control" id="exampleFormControlSelect3"  >
+                                                          <option value="1">Baja</option>
+                                                          <option value="2">Media</option>
+                                                          <option value="3">Alta</option>
+                                                        </select>
+                                              
+                                            </div>
+                                             <div class="form-group"  >
+                                             <h6 >Descripcion de tu actividad </h6>
+                                              <input type="text" class="form-control"  [(ngModel)]="DescripcionA" name="DescripcionA">
+                                              
+                                            </div>
+                                            <button type="button" class="btn btn-success btn-circle btn-lg"  (click)="Agregar()" onclick="agregarD"><i class="fa fa-check"></i>
+                            </button>
+                                          </form>
+  </div>
+</div>
+        </button>
+                    </div>
+                              
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+<div class="row" id="probando4">
+<div class="card" style="width: 18rem;">
+  <div class="card-header card-header-danger" id="pruebaN4" >
+                        </div>
+  <div class="card-body" >
+    <h5>Descripcion de tu Actividad</h5>
+    <ul class="list-group list-group-flush">
+
+      <li class="list-group-item" id="cuerpoT4">
+     
+    </li>
+    <li class="list-group-item">
+       <p>   </p>
+    <div class="container">
+  <div class="round">
+    <input type="checkbox" id="checkbox" />
+    <label for="checkbox"></label>
+  </div>
+</div>
+   
+     <button type="button" class="btn btn-danger btn-circle btn-lg" ><i class="fa fa-wrench "></i></button>
+
+     <button type="button" class="btn btn-danger btn-circle btn-lg" ><i class="fa fa-trash "></i></button> 
+    </li>
+    
+  </ul>
+  </div>
+</div>
+
+
+
+    </div>
+    </div>
+  </div>
+  
+  
+</div>
+   
+
+
+ <div id="accordion">
+  <div class="card " style="width: 75rem; left: 40px; bottom: 40px;">
+     <div class="card-header" style="background-color: lightgreen;">
+                      <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <div class="btn-group dropleft" >
+              <h2><i class="3d_rotation"></i> Viernes</h2>  
+  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" (click)=" viernes();" aria-haspopup="true" aria-expanded="false" style="position: relative; left:900px; bottom: 35px;  background-color: #ff8a80; ">
+   Nueva Tarea
+  </button>
+  <div class="dropdown-menu">
+      <form class="px-3 py-12" style="width: 300px;">
+                                             <div class="form-group"   >
+                                              <h6 >Nombre de tu actividad </h6>
+                                              <input type="name" class="form-control"   [(ngModel)]="NombreA" placeholder="Nombre Actividad" name="NombreA">
+                                            </div>
+                                            <div class="form-group" >
+                                              <div class="row">
+                                              <div class="form-group" style="position :relative; left: 15%;">
+                                                       <h6>Hora Inicio </h6>
+                                                        <select class="form-control" id="exampleFormControlSelect1"  >
+                                                          <option value="1"  >1:00pm</option>
+                                                          <option value="2"  >2:00pm</option>
+                                                          <option value="3"  >3:00pm</option>
+                                                          <option value="4" >4:00pm</option>
+                                                          <option value="5" >5:00pm</option>
+                                                          <option value="6" >6:00pm</option>
+                                                          <option value="7" >7:00pm</option>
+                                                          <option value="8" >8:00pm</option>
+                                                          <option value="9" >9:00pm</option>
+                                                          <option value="10" >10:00pm</option>
+                                                          <option value="11" >11:00pm</option>
+                                                          <option value="12" >12:00pm</option>
+                                                        </select>
+                                                      </div>
+                                                      <div class="row">
+
+                                                         <div class="form-group" style="position :absolute; right: 15%;" >
+                                                
+                                                       <h6>Hora Fin </h6>
+                                                        <select class="form-control" id="exampleFormControlSelect2"  >
+                                                          <option value="1"  >1:00pm</option>
+                                                          <option value="2"  >2:00pm</option>
+                                                          <option value="3"  >3:00pm</option>
+                                                          <option value="4" >4:00pm</option>
+                                                          <option value="5" >5:00pm</option>
+                                                          <option value="6" >6:00pm</option>
+                                                          <option value="7" >7:00pm</option>
+                                                          <option value="8" >8:00pm</option>
+                                                          <option value="9" >9:00pm</option>
+                                                          <option value="10" >10:00pm</option>
+                                                          <option value="11" >11:00pm</option>
+                                                          <option value="12" >12:00pm</option>
+                                                        </select>
+                                                      </div>
+                                                      </div>
+                                                   </div>
+                                                </div>   
+                                            <div class="form-group" style="align-content: center;">
+                                               <h6>Selecciona la Prioridad </h6>
+                                                        <select class="form-control" id="exampleFormControlSelect3"  >
+                                                          <option value="1" >Baja</option>
+                                                          <option value="2" >Media</option>
+                                                          <option value="3" >Alta</option>
+                                                        </select>
+                                              
+                                            </div>
+                                             <div class="form-group"  >
+                                             <h6 >Descripcion de tu actividad </h6>
+                                              <input type="text" class="form-control"  [(ngModel)]="DescripcionA" name="DescripcionA">
+                                              
+                                            </div>
+                                            <button type="button" class="btn btn-success btn-circle btn-lg"  (click)="Agregar()" onclick="agregarD"><i class="fa fa-check"></i>
+                            </button>
+                                          </form>
+  </div>
+</div>
+        </button>
+                    </div>
+                              
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+<div class="row" id="probando5">
+<div class="card" style="width: 18rem;">
+  <div class="card-header card-header-danger" id="pruebaN5" >
+                        </div>
+  <div class="card-body" >
+    <h5>Descripcion de tu Actividad</h5>
+    <ul class="list-group list-group-flush">
+
+      <li class="list-group-item" id="cuerpoT5">
+     
+    </li>
+    <li class="list-group-item">
+       <p>   </p>
+    <div class="container">
+  <div class="round">
+    <input type="checkbox" id="checkbox" />
+    <label for="checkbox"></label>
+  </div>
+</div>
+   
+     <button type="button" class="btn btn-danger btn-circle btn-lg" ><i class="fa fa-wrench "></i></button>
+
+     <button type="button" class="btn btn-danger btn-circle btn-lg" ><i class="fa fa-trash "></i></button> 
+    </li>
+    
+  </ul>
+  </div>
+</div>
+
+
+
+    </div>
+    </div>
+  </div>
+  
+  
+</div>
+   
+
+ <div id="accordion">
+  <div class="card " style="width: 75rem; left: 40px; bottom: 40px;">
+     <div class="card-header" style="background-color: lightgreen;">
+                      <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <div class="btn-group dropleft" >
+              <h2><i class="3d_rotation"></i> Sabado</h2>  
+  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" (click)=" sabado();" aria-haspopup="true" aria-expanded="false" style="position: relative; left:900px; bottom: 35px;  background-color: #ff8a80; ">
+   Nueva Tarea
+  </button>
+  <div class="dropdown-menu">
+      <form class="px-3 py-12" style="width: 300px;">
+                                             <div class="form-group"  >
+                                              <h6 >Nombre de tu actividad </h6>
+                                              <input type="name" class="form-control"   [(ngModel)]="NombreA" placeholder="Nombre Actividad" name="NombreA">
+                                            </div>
+                                            <div class="form-group" >
+                                              <div class="row">
+                                              <div class="form-group" style="position :relative; left: 15%;">
+                                                
+                                                       <h6>Hora Inicio </h6>
+                                                        <select class="form-control" id="exampleFormControlSelect1"  >
+                                                          <option value="1"  >1:00pm</option>
+                                                          <option value="2"  >2:00pm</option>
+                                                          <option value="3"  >3:00pm</option>
+                                                          <option value="4" >4:00pm</option>
+                                                          <option value="5" >5:00pm</option>
+                                                          <option value="6" >6:00pm</option>
+                                                          <option value="7" >7:00pm</option>
+                                                          <option value="8" >8:00pm</option>
+                                                          <option value="9" >9:00pm</option>
+                                                          <option value="10" >10:00pm</option>
+                                                          <option value="11" >11:00pm</option>
+                                                          <option value="12" >12:00pm</option>
+                                                        </select>
+                                                      </div>
+                                                      <div class="row">
+
+                                                         <div class="form-group" style="position :absolute; right: 15%;" >
+                                                
+                                                       <h6>Hora Fin </h6>
+                                                        <select class="form-control" id="exampleFormControlSelect2" [(ngModel)]="HorasA" >
+                                                          <option value="1"  >1:00pm</option>
+                                                          <option value="2"  >2:00pm</option>
+                                                          <option value="3"  >3:00pm</option>
+                                                          <option value="4" >4:00pm</option>
+                                                          <option value="5" >5:00pm</option>
+                                                          <option value="6" >6:00pm</option>
+                                                          <option value="7" >7:00pm</option>
+                                                          <option value="8" >8:00pm</option>
+                                                          <option value="9" >9:00pm</option>
+                                                          <option value="10" >10:00pm</option>
+                                                          <option value="11" >11:00pm</option>
+                                                          <option value="12" >12:00pm</option>
+                                                       
+                                                        </select>
+                                                      </div>
+                                                      </div>
+                                                   </div>
+                                                </div>   
+                                            <div class="form-group" style="align-content: center;">
+                                               <h6>Selecciona la Prioridad </h6>
+                                                        <select class="form-control" id="exampleFormControlSelect3"  >
+                                                          <option value="1" >Baja</option>
+                                                          <option value="2" >Media</option>
+                                                          <option value="3" >Alta</option>
+                                                        </select>
+                                              
+                                            </div>
+                                             <div class="form-group"  >
+                                             <h6 >Descripcion de tu actividad </h6>
+                                              <input type="text" class="form-control"  [(ngModel)]="DescripcionA" name="DescripcionA">
+                                              
+                                            </div>
+                                            <button type="button" class="btn btn-success btn-circle btn-lg"  (click)="Agregar()" onclick="agregarD"><i class="fa fa-check"></i>
+                            </button>
+                                          </form>
+  </div>
+</div>
+        </button>
+                    </div>
+                              
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+<div class="row" id="probando6">
+<div class="card" style="width: 18rem;">
+  <div class="card-header card-header-danger" id="pruebaN6" >
+                        </div>
+  <div class="card-body" >
+    <h5>Descripcion de tu Actividad</h5>
+    <ul class="list-group list-group-flush">
+
+      <li class="list-group-item" id="cuerpoT6">
+     
+    </li>
+    <li class="list-group-item">
+       <p>   </p>
+    <div class="container">
+  <div class="round">
+    <input type="checkbox" id="checkbox" />
+    <label for="checkbox"></label>
+  </div>
+</div>
+   
+     <button type="button" class="btn btn-danger btn-circle btn-lg" ><i class="fa fa-wrench "></i></button>
+
+     <button type="button" class="btn btn-danger btn-circle btn-lg" ><i class="fa fa-trash "></i></button> 
+    </li>
+    
+  </ul>
+  </div>
+</div>
+
+</div>
+
+    </div>
+    </div>
+  </div>
+  
+  
+</div>
+
+ <div id="accordion">
+  <div class="card " style="width: 75rem; left: 40px; bottom: 40px;">
+     <div class="card-header" style="background-color: lightgreen;">
+                      <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <div class="btn-group dropleft" >
+              <h2><i class="3d_rotation"></i> Domingo</h2>  
+  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" (click)=" domingo();" aria-haspopup="true" aria-expanded="false" style="position: relative; left:870px; bottom: 35px; background-color: #ff8a80; ">
+   Nueva Tarea
+  </button>
+  <div class="dropdown-menu">
+      <form class="px-3 py-12" style="width: 300px;">
+                                             <div class="form-group"  >
+                                              <h6 >Nombre de tu actividad </h6>
+                                              <input type="name" class="form-control"   [(ngModel)]="NombreA" placeholder="Nombre Actividad" name="NombreA">
+                                            </div>
+                                            <div class="form-group" >
+                                              <div class="row">
+                                              <div class="form-group" style="position :relative; left: 15%;">
+                                                
+                                                       <h6>Hora Inicio </h6>
+                                                        <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="HorasA" >
+                                                         <option value="1"  >1:00pm</option>
+                                                          <option value="2"  >2:00pm</option>
+                                                          <option value="3"  >3:00pm</option>
+                                                          <option value="4" >4:00pm</option>
+                                                          <option value="5" >5:00pm</option>
+                                                          <option value="6" >6:00pm</option>
+                                                          <option value="7" >7:00pm</option>
+                                                          <option value="8" >8:00pm</option>
+                                                          <option value="9" >9:00pm</option>
+                                                          <option value="10" >10:00pm</option>
+                                                          <option value="11" >11:00pm</option>
+                                                          <option value="12" >12:00pm</option>
+                                                        </select>
+                                                      </div>
+                                                      <div class="row">
+
+                                                         <div class="form-group" style="position :absolute; right: 15%;" >
+                                                
+                                                       <h6>Hora Fin </h6>
+                                                        <select class="form-control" id="exampleFormControlSelect2" [(ngModel)]="HorasA" >
+                                                          <option value="1"  >1:00pm</option>
+                                                          <option value="2"  >2:00pm</option>
+                                                          <option value="3"  >3:00pm</option>
+                                                          <option value="4" >4:00pm</option>
+                                                          <option value="5" >5:00pm</option>
+                                                          <option value="6" >6:00pm</option>
+                                                          <option value="7" >7:00pm</option>
+                                                          <option value="8" >8:00pm</option>
+                                                          <option value="9" >9:00pm</option>
+                                                          <option value="10" >10:00pm</option>
+                                                          <option value="11" >11:00pm</option>
+                                                          <option value="12" >12:00pm</option>
+                                                        </select>
+                                                      </div>
+                                                      </div>
+                                                   </div>
+                                                </div>   
+                                            <div class="form-group" style="align-content: center;">
+                                               <h6>Selecciona la Prioridad </h6>
+                                                        <select class="form-control" id="exampleFormControlSelect3" >
+                                                          <option value="1" >Baja</option>
+                                                          <option value="2" >Media</option>
+                                                          <option value="3" >Alta</option>
+                                                        </select>
+                                              
+                                            </div>
+                                             <div class="form-group"  >
+                                             <h6 >Descripcion de tu actividad </h6>
+                                              <input type="text" class="form-control"  [(ngModel)]="DescripcionA" name="DescripcionA">
+                                              
+                                            </div>
+                                            <button type="button" class="btn btn-success btn-circle btn-lg"  (click)="Agregar()" onclick="agregarD"><i class="fa fa-check"></i>
+                            </button>
+                                          </form>
+  </div>
+</div>
+        </button>
+                    </div>
+                              
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+        <div class="scrollbar scrollbar-lady-lips">
+  <div class="force-overflow"></div>
+</div>
+<div class="row" id="probando7">
+<div class="card" style="width: 18rem;">
+  <div class="card-header card-header-danger" id="pruebaN7" >
+                        </div>
+  <div class="card-body" >
+    <h5>Descripcion de tu Actividad</h5>
+    <ul class="list-group list-group-flush">
+
+      <li class="list-group-item" id="cuerpoT7">
+     
+    </li>
+    <li class="list-group-item">
+       <p>   </p>
+    <div class="container">
+  <div class="round">
+    <input type="checkbox" id="checkbox" />
+    <label for="checkbox"></label>
+  </div>
+</div>
+   
+     <button type="button" class="btn btn-danger btn-circle btn-lg" ><i class="fa fa-wrench "></i></button>
+
+     <button type="button" class="btn btn-danger btn-circle btn-lg" ><i class="fa fa-trash "></i></button> 
+    </li>
+    
+  </ul>
+  </div>
+</div>
+
+</div>
+
+    </div>
+    </div>
+  </div>
+  
+  </div>
+  </div>
+</div>
+
+
+
+    </div>
+  
+   
+  </div>
+
   </div>
   
