@@ -17,6 +17,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { ActividadCrearComponent } from 'app/actividad-crear/actividad-crear.component';
 import { RendimientoComponent } from 'app/rendimiento/rendimiento.component';
 import { PagprincipalComponent } from 'app/pagprincipal/pagprincipal.component';
+import { PerfilComponent } from 'app/perfil/perfil.component';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { PagprincipalComponent } from 'app/pagprincipal/pagprincipal.component';
     ActividadCrearComponent,
     RendimientoComponent,
     PagprincipalComponent,
+    PerfilComponent,
   ]
 })
 

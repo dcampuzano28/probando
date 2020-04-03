@@ -3,6 +3,23 @@ import { ServicioActividadService } from 'app/Servicios/servicio-actividad.servi
 //import { ActividadService } from '../Servicio/actividad.service';
 import { Actividad } from '../Clases/Actividad'
 
+declare const $: any;
+declare interface RouteInfo {
+    path: string;
+    title: string;
+    icon: string;
+    class: string;
+}
+
+export const ROUTES: RouteInfo[] = [
+
+      { path: '/calendario', title: 'Calendario',  icon:'content_paste', class: '' },
+      { path: '/actividadcrear', title: 'Nueva Actividad',  icon:'unarchive', class: '' },
+      { path: '/editar', title: 'Editar Actividad', icon: 'dashboard', class: ''},
+      { path: '/rendimiento', title: 'Rendimiento', icon: 'add', class:'' },
+      { path: '/perfil', title: 'Perfil', icon: 'person', class:'' },
+    ];
+      
 @Component({
   selector: 'app-calendario',
   templateUrl: './calendario.component.html',
@@ -10,6 +27,8 @@ import { Actividad } from '../Clases/Actividad'
 })
 
 export class CalendarioComponent implements OnInit {
+  menuItems: any[];
+  
   hora7: any[]
   hora8: any[]
   hora9: any[]
@@ -37,7 +56,7 @@ export class CalendarioComponent implements OnInit {
     this.inicializarTabla()
   }
 
-  ngOnInit(): void {
+ /* ngOnInit(): void {
     //this.ComparacionHora(this.hora);
     try {
       this.actividad = this.servicioActividad.getActividad();
@@ -52,12 +71,20 @@ export class CalendarioComponent implements OnInit {
       /*(actividadesBD) => {
         this.misActividades = JSON.parse(actividadesBD)
         }*/
-      (ractividades: Actividad[]) => //this.jsonres=(JSON.stringify(ractividades[0]))
+      /*(ractividades: Actividad[]) => //this.jsonres=(JSON.stringify(ractividades[0]))
         this.misActividades=ractividades
     ); 
     //console.log('aqui va, tamaño arreglo: ' +this.jsonres[0]);
+  }*/
+  ngOnInit() {
+    this.menuItems = ROUTES.filter(menuItem => menuItem);
   }
-
+  isMobileMenu() {
+      if ($(window).width() > 991) {
+          return false;
+      }
+      return true;
+  };
   /*respuesta : any[] =[
     {
       "id_actividad": 1,

@@ -12,7 +12,7 @@ export const ROUTES: RouteInfo[] = [
     { path: '/login', title: 'Inicio de Sesion',  icon:'person', class: '' },
     { path: '/registro', title: 'Registro',  icon:'library_books', class: '' },
     { path: '/calendario', title: 'Calendario',  icon:'content_paste', class: '' },
-    { path: '/actividadcrear', title: 'Nueva Actividad',  icon:'unarchive', class: '' },
+    { path: '/actividadcrear', title: 'Nueva Actividad',  icon:'add', class: '' },
     { path: '/editar', title: 'Editar Actividad', icon: 'dashboard', class: ''},
     { path: '/rendimiento', title: 'Rendimiento', icon: 'assessment', class:'' },
     { path: '/pagprincipal', title: 'Pagina Principal', icon: 'date_range', class:'' },

@@ -64,7 +64,7 @@
     border-radius: 50%;
   }
 
-  .titulo{
+  .card-header{
     background-color: #ea4541;
     color: #eaeaea;
     align-content: center;
@@ -80,4 +80,8 @@
 
   input{
     border: none;
+  }
+
+  .material-icons{
+    color: #eaeaea;
   }

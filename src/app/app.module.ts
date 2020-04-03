@@ -15,10 +15,15 @@ import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { ServicioActividadService } from './Servicios/servicio-actividad.service';
 import { ServicioUsuarioService } from './Servicios/servicio-usuario.service';
+import { ServicioActividadesextraService } from './Servicios/servicio-actividadesextra.service';
+import { ServicioMateriaService } from './Servicios/servicio-materia.service';
+import { ServicioCompanerosService } from './Servicios/servicio-companeros.service';
+import { ServicioPerfilService } from './Servicios/servicio-perfil.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { EditarComponent } from './editar/editar.component';
 import { RendimientoComponent } from './rendimiento/rendimiento.component';
 import { PagprincipalComponent } from './pagprincipal/pagprincipal.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 
 
@@ -40,7 +45,7 @@ import { PagprincipalComponent } from './pagprincipal/pagprincipal.component';
     AppComponent,
     AdminLayoutComponent,
   ],
-  providers: [ServicioActividadService, ServicioUsuarioService],
+  providers: [ServicioActividadService, ServicioUsuarioService, ServicioActividadesextraService,ServicioCompanerosService,ServicioMateriaService, ServicioPerfilService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
