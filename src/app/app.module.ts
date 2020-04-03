@@ -18,12 +18,12 @@ import { ServicioUsuarioService } from './Servicios/servicio-usuario.service';
 import { ServicioActividadesextraService } from './Servicios/servicio-actividadesextra.service';
 import { ServicioMateriaService } from './Servicios/servicio-materia.service';
 import { ServicioCompanerosService } from './Servicios/servicio-companeros.service';
-import { ServicioPerfilService } from './Servicios/servicio-perfil.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { EditarComponent } from './editar/editar.component';
 import { RendimientoComponent } from './rendimiento/rendimiento.component';
 import { PagprincipalComponent } from './pagprincipal/pagprincipal.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { ServicioPerfilcomponenteService} from './Servicios/servicio-perfilcomponente.service';
 
 
 
@@ -45,7 +45,7 @@ import { PerfilComponent } from './perfil/perfil.component';
     AppComponent,
     AdminLayoutComponent,
   ],
-  providers: [ServicioActividadService, ServicioUsuarioService, ServicioActividadesextraService,ServicioCompanerosService,ServicioMateriaService, ServicioPerfilService],
+  providers: [ServicioPerfilcomponenteService, ServicioActividadService, ServicioUsuarioService, ServicioActividadesextraService,ServicioCompanerosService,ServicioMateriaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

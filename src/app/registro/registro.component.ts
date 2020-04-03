@@ -17,6 +17,8 @@ export class RegistroComponent implements OnInit {
   ngOnInit(): void {
     this.miusuario=this.serviciousuario.nuevousuario()
     console.log(this.miusuario)
+
+    
   }
   validarRegistro(){
     if(this.recontrasena=this.miusuario.password){
@@ -31,10 +33,10 @@ export class RegistroComponent implements OnInit {
   enviarRegistro(){
     
     this.serviciousuario.addUsuarioBD(this.miusuario).subscribe(
-      data => {
+      data => {console.log(data)
       },
-      err => console.error(err)
-      
+      err => console.error(err),
+      ()=>console.log("Se registro ")
       )
     }
 }

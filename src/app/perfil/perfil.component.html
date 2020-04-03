@@ -37,10 +37,12 @@
                                         <input type="checkbox">
                                         <span class="slider round"></span>
                                     </label>
-                                    <br><input type="text" [(ngModel)]="Perfil.NombreUsuario" [disabled]="true"><br>
-                                    <input type="text" [(ngModel)]="Perfil.Nombre" [disabled]="habilitar">
-                                    <br><input type="text" [(ngModel)]="Perfil.Correo" [disabled]="habilitar">
-                                    <br><input type="text" [(ngModel)]="Perfil.Carrera" [disabled]="habilitar">
+                                    <br>
+                                    <input type="text" [(ngModel)]="perfil.first_name" [disabled]="habilitar">
+                                    <br><input type="text" [(ngModel)]="perfil.last_name" [disabled]="habilitar">
+                                    <br><input type="text" [(ngModel)]="perfil.email" [disabled]="habilitar"><br>
+                                    <input type="text" [(ngModel)]="perfil.carr_estudiante" [disabled]="true"><br>
+                                    <input type="text" [(ngModel)]="perfil.username" [disabled]="true"><br>
                                     <br>
                                     <button type="submit" class="btn btn-white btn-round "
                                         style="background-color:#ea4541; color: beige; " (click)="EditarPerfilFunc()">
@@ -62,11 +64,12 @@
                                                             <div class="nav-tabs-wrapper">
                                                                 <span class="nav-tabs-title">Materias: </span>
                                 <td class="td-actions text-right">
-                                    <button mat-raised-button type="button" matTooltip="Add"
+                                    <button mat-raised-button type="button" matTooltip="Agregar Materia"
                                         [matTooltipPosition]="'above'"
                                         class="btn btn-danger btn-link btn-sm btn-just-icon">
                                         <i class="material-icons">add</i>
                                     </button>
+                                    
                                 </td>
                     </div>
                 </div>
@@ -78,9 +81,7 @@
                             <tbody>
                                 <tr *ngFor="let materias of Materias">
                                     <th scope="row">{{materias.Nombre}}</th>
-                                    <button mat-raised-button type="button" matTooltip="Remove"
-                                        [matTooltipPosition]="'above'"
-                                        class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                    <button (click)="EliminarM(materias)" mat-raised-button type="button" matTooltip="Eliminar" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
                                         <i class="material-icons">close</i>
                                     </button>
                                 </tr>
@@ -100,7 +101,7 @@
                     <div class="nav-tabs-wrapper">
                         <span class="nav-tabs-title">Actividades Extra:</span>
                         <td class="td-actions text-right">
-                            <button mat-raised-button type="button" matTooltip="Add" [matTooltipPosition]="'above'"
+                            <button mat-raised-button type="button" matTooltip="Agregar Actividad" [matTooltipPosition]="'above'"
                                 class="btn btn-danger btn-link btn-sm btn-just-icon">
                                 <i class="material-icons">add</i>
                             </button>
@@ -115,9 +116,7 @@
                             <tbody>
                                 <tr *ngFor="let actividadesextra of ActividadesExtra">
                                     <th scope="row">{{actividadesextra.Nombre}}</th>
-                                    <button mat-raised-button type="button" matTooltip="Remove"
-                                        [matTooltipPosition]="'above'"
-                                        class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                    <button (click)="EliminarA(actividadesextra)" mat-raised-button type="button" matTooltip="Eliminar" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
                                         <i class="material-icons">close</i>
                                     </button>
                                 </tr>
@@ -141,10 +140,6 @@
                         <div class="nav-tabs-wrapper">
                             <span class="nav-tabs-title">Compañeros:</span>
 <td class="td-actions text-right">
-    <button mat-raised-button type="button" matTooltip="Add" [matTooltipPosition]="'above'"
-        class="btn btn-danger btn-link btn-sm btn-just-icon">
-        <i class="material-icons">add</i>
-    </button>
 </td>
 </div>
 </div>
@@ -156,10 +151,6 @@
                 <tbody>
                     <tr *ngFor="let companero of Companeros">
                         <th scope="row">{{companero.Nombre}}</th>
-                        <button mat-raised-button type="button" matTooltip="Remove" [matTooltipPosition]="'above'"
-                            class="btn btn-danger btn-link btn-sm btn-just-icon">
-                            <i class="material-icons">close</i>
-                        </button>
                     </tr>
                 </tbody>
             </table>

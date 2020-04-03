@@ -10,7 +10,7 @@ import { Observable } from 'rxjs/Observable';
 export class ServicioUsuarioService {
 
   miusuario: Usuario
-  private url = "http://localhost:8000/registro/"
+  private url = "http://localhost:8000/aplicacion/users/"
 
   getUsuario() {
     return this.miusuario
@@ -37,7 +37,6 @@ export class ServicioUsuarioService {
         "password": "12345678",
         "gen_estudiante": "F",
         "carr_estudiante": "Ingenieria"
-      
     }
   }
 
@@ -46,5 +45,6 @@ export class ServicioUsuarioService {
     let headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this.http.post(this.url, json, { headers: headers });
   }
+
 }
 
