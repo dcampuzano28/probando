@@ -47,14 +47,14 @@ export class ServicioActividadService {
   }
   nuevaActividad():Actividad{
       return {
-         "id_actividad":null ,
-              "HoraIn":null,
-                  "HoraFn":null,
-                      "NombreA":"",
-                          "DescripcionA":"",
-                                "Motivacion":"",
-                                    "prioridad":null,
-                                              "Dia":null 
+             'id_actividad':null, 
+                       'HoraIn':null,
+                               'HoraFn':null,
+                                     'nom_actividad':"",
+                                            'des_actividad':"",
+                                                      'Motivacion':"",
+                                                              'id_prioridad':null,
+                                                                         'dia_actividad':"" 
       };
   }
   addActividad(actividad: Actividad): Observable<any>{
