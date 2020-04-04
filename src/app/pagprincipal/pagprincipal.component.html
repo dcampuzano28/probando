@@ -1,4 +1,4 @@
-<div class="main-content">
+<div class=wrapper>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -6,16 +6,32 @@
                     <div class="card-header card-header-danger">
                         <h4 class="card-title ">Pagina Principal</h4>
                         <p class="card-category"> Bienvenido!!</p>
+                        
+                        <!--a href="#" class="btn pull-right dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">MENU<i class="icon-settings"></i></a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                
+                            <a href="#" class="dropdown-item">Link 1</a>
+                            <a href="#" class="dropdown-item">Link 1</a>
+                            <a href="#" class="dropdown-item">Link 1</a>
+                        </div-->
+                        <!--div class="card text-center">
+                            <div class="card-block">
+                              <h4 class="card-title">Special title treatment</h4>
+                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                              <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div-->
                     </div>
                     <div class="card-body">
                         <div class="input-group no-border  d-flex float-right justify-content-end align-items-right">
 
-                            <button  [routerLink]="['/login']" type="submit"
-                                class="btn btn-white btn-round " style="background-color:#ea4541; color: beige; ">
+                            <button [routerLink]="['/login']" type="submit" class="btn btn-white btn-round "
+                                style="background-color:#ea4541; color: beige; ">
                                 Iniciar Sesion
                             </button>
-                            <button [routerLink]="['/registro']" type="submit"
-                                class="btn btn-white btn-round " style="background-color:#ea4541; color: beige; ">
+                            <button [routerLink]="['/registro']" type="submit" class="btn btn-white btn-round "
+                                style="background-color:#ea4541; color: beige; ">
                                 Registrarse
                             </button>
                         </div>
