@@ -8,4 +8,7 @@ export class Usuario{
     password:string
 
     carr_estudiante:string
+    constructor(){
+        
+    }
 }

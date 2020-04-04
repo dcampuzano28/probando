@@ -45,9 +45,9 @@ export class ObjetivosComponent implements OnInit {
     this.miServ.listarObjetivosget().subscribe(
       data =>{
         this.listaObjetivos=data
-
     },
-    err => console.log(err))
+    err => console.log(err)),
+    ()=>console.log('termino peticion de lista')
 
     
   }

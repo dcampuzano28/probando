@@ -23,9 +23,12 @@ private miUsuario:Usuario
     this.miUsuario=usuario
 
   }
+  getjson():Observable<any>{
+    return this.http.get('BD/actividades.json')
+  }
 
-  getIdUsuario(username:string):Observable<any>{
-    return this.http.get('http://localhost:8000/aplicacion/users/?username='+username)
+  getIdUsuario(username:string):Observable<Usuario>{
+    return this.http.get<Usuario>('http://localhost:8000/aplicacion/users/?username='+username)
   }
 
 }

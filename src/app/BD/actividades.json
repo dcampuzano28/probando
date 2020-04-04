@@ -1,16 +1,28 @@
 [
     {
-        "nombre":"Rascarse",
-        "dia":"Lunes",
-        "hora":7,
-        "estado":false,
-        "descripcion":"una descripcion"
+        "carr_estudiante": "vaganciaptforever",
+​
+"email": "johanwsss@gmail.com",
+​
+"first_name": "johan",
+​
+"id": 3,
+​
+"last_name": "sanchez",
+​
+"password": "pbkdf2_sh"
     },
     {
-        "nombre":"Dormir",
-        "dia":"Martes",
-        "hora":8,
-        "estado":true,
-        "descripcion":"una descripcion2"
+        "carr_estudiante": "vaganciaptforever",
+​
+"email": "johanwsss@gmail.com2",
+​
+"first_name": "johan2",
+​
+"id": 34,
+​
+"last_name": "sanchez2",
+​
+"password": "pbkdf2_sh2"
     }
 ]

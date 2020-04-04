@@ -13,14 +13,13 @@ export class ServicioObjetivosService {
   constructor(protected http: HttpClient,private servT:ServicioTokenService) { }
   listarObjetivosget():Observable<any>{
     let id_estudiante=this.servT.getUsuario().id
-    console.log('token resivido ',this.servT.getToken())
-    console.log('idestudiante = ',id_estudiante)
-    return this.http.get(this.url+'?id_estudiante='+id_estudiante)
+    id_estudiante=1
+    return this.http.get('http://127.0.0.1:8000/aplicacion/objetivo/')
   }
   
   actualizarObjetivo(objetivo:Objetivo):Observable<any>{
     
-    let id=this.servT.getUsuario().id
+    let id=1
     return this.http.put(this.url+'?id_estudiante='+id,objetivo)
   }
 }

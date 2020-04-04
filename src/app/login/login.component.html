@@ -64,14 +64,14 @@
                                 <input type="password" value="" class="form-control" placeholder="Contraseña..."  [(ngModel)]="miU.password" name="contrasena">
                             </div>
                             <div class="input-group no-border">
-                                <button (click)="validarUsuario()" [routerLink]="['/calendario']" type="submit" class="btn btn-white btn-round " style="background-color: rgb(192, 189, 189); color: beige; ">
-                                    Aceptar
-                                    
-                                </button>
-                                <!--button (click)="validarUsuario()"  type="submit" class="btn btn-white btn-round " style="background-color: rgb(192, 189, 189); color: beige; ">
+                                <!--button (click)="validarUsuario()" [routerLink]="['/calendario']" type="submit" class="btn btn-white btn-round " style="background-color: rgb(192, 189, 189); color: beige; ">
                                     Aceptar
                                     
                                 </button-->
+                                <button (click)="validarUsuario()"  type="submit" class="btn btn-white btn-round " style="background-color: rgb(192, 189, 189); color: beige; ">
+                                    Aceptar
+                                    
+                                </button>
                                 <a [routerLink]="['/registro']">Eres nuevo?</a>
                                 <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
                                     <mat-icon>add_circle_outline</mat-icon>
@@ -80,11 +80,14 @@
 
                                         <form class="col-md-12" (click)="stopPropagation($event)">
                                             <mat-form-field class="example-full-width">
-                                            <input matInput type="text" style="font-size:10px"[(ngModel)]="id" name="id">
+                                                <input matInput type="text" style="font-size:10px"[(ngModel)]="id" name="id">
                                             </mat-form-field>
                                             <mat-form-field class="example-full-width">
                                                 <input matInput  type="text" style="font-size:10px" [(ngModel)]="nombre" name="nombre">
-                                                </mat-form-field>
+                                            </mat-form-field>
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput  type="text" style="font-size:10px" [(ngModel)]="miToken" name="miToken">
+                                            </mat-form-field>
                                             <button type="button" id="btnLogin" class="btn btn-default">Login</button>
                                         </form>
                                         <button mat-menu-item>
