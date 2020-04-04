@@ -75,6 +75,10 @@ export class PerfilComponent implements OnInit {
   EditarPerfilFunc(){
     this.EditarPerfil=this.EditarPerfil=== "Guardar" ? 'Editar Perfil' : 'Guardar'; 
     this.habilitar=this.habilitar=== true ? false: true;
+    console.log("PUT")
+    console.log(this.perfil)
+    this.ServicioPerfilComponente.putPerfil(this.perfil).subscribe()
+    console.log(this.perfil)
     //this.estadoCuadro=this.estadoCuadro === 'estado1' ? 'estado2' : 'estado1';
   }
 
