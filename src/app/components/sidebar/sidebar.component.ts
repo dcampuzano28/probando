@@ -13,9 +13,6 @@ export const ROUTES: RouteInfo[] = [
     { path: '/registro', title: 'Registro',  icon:'library_books', class: '' },
     { path: '/calendario', title: 'Calendario',  icon:'content_paste', class: '' },
     { path: '/actividadcrear', title: 'Nueva Actividad',  icon:'unarchive', class: '' },
-    { path: '/editar', title: 'Editar Actividad', icon: 'dashboard', class: ''},
-    { path: '/rendimiento', title: 'Rendimiento', icon: 'assessment', class:'' },
-    { path: '/pagprincipal', title: 'Pagina Principal', icon: 'date_range', class:'' },
     /*{ path: '/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
 >>>>>>> ce8e3574a01a217788f90e828977f68c2f4950b8
     { path: '/user-profile', title: 'User Profile',  icon:'person', class: '' },
@@ -40,6 +37,16 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
+     $('.dropdown-menu').on('click', function (e) {
+ var b=(`${e.target.textContent} `);
+ console.log(b);
+  if(b=='Inicio de Sesion'){
+    alert("si");
+    $('.dropdown-menu').css("display", "none");
+  } else{
+    $('.dropdown-menu').css("display", "block");
+   }
+});
   }
   isMobileMenu() {
       if ($(window).width() > 991) {
@@ -47,4 +54,7 @@ export class SidebarComponent implements OnInit {
       }
       return true;
   };
+ 
+
+  
 }
