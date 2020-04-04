@@ -22,7 +22,7 @@ export class ActividadCrearComponent implements OnInit {
     this.servicioActividad.addActividad(this.actividad).subscribe(
       data => {
       },
-      err => console.error(err),
+      err => console.error('error en actividad crear'),
       () => console.log('No a cargado el post')
       )
     this.servicioActividad.setActividad(this.actividad)

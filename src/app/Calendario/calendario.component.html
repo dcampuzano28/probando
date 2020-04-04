@@ -4,10 +4,37 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-danger">
-                        <h4 class="card-title ">Actividades</h4>
+                        <h4 class="card-title ">Actividades  {{username}}</h4>
                         <p class="card-category"> Aqui encontraras tus actividades programadas durante el transcurso de
                             la semana</p>
-                    </div>
+
+                            <div class="logo">
+        
+                                        <div class="dropdown show" id="dropdownMenuLink1">
+                                <a class="btn btn-danger btn-large dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Menu
+                                </a>
+                                
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="prueba">
+                                    <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item" >
+                                            <a class="nav-link" [routerLink]="[menuItem.path]"  id="probando">
+                                                <i class="material-icons">{{menuItem.icon}}</i>
+                                                <p id="probando"  >{{menuItem.title}}</p>
+                                            </a>
+                                        </li>
+                                </div>
+                                </div>
+                                        
+                                </div>
+                                <div class="sidebar-wrapper">
+                                
+                                    <ul class="nav">
+                                        
+                                    </ul>
+                                </div>
+
+
+                    </div>        
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table">
@@ -325,6 +352,7 @@
                                 </tbody>
                             </table>
                             Fecha nacimiento: <input type="date" name="cumpleanios" step="1" min="2013-01-01" max="2013-12-31" value="2013-01-01">
+                            
                         </div>
                     </div>
                 </div>
@@ -335,4 +363,6 @@
         </div>
     </div>
  </div>
+
+ 
  

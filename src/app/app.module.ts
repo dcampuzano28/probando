@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
-import { ComponentsModule } from './components/components.module';
+//import { ComponentsModule } from './components/components.module';
 import { AppComponent } from './app.component';
 import { CalendarioComponent } from './Calendario/calendario.component';
 import {AgmCoreModule} from '@agm/core';
@@ -22,23 +22,23 @@ import { PagprincipalComponent } from './pagprincipal/pagprincipal.component';
 
 
 
+
 @NgModule({
   imports: [
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    ComponentsModule,
+    //ComponentsModule,
     RouterModule,
     AppRoutingModule,
     HttpClientModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
-    })
+    
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    
   ],
   providers: [ServicioActividadService, ServicioUsuarioService],
   bootstrap: [AppComponent]

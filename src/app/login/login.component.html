@@ -6,11 +6,54 @@
                     <div class="card-header card-header-danger">
                         <h4 class="card-title ">Iniciar Sesión</h4>
                         <p class="card-category"> Inicia sesión para una mayor experiencia</p>
+
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="" checked>
+                                <span class="form-check-sign">
+                                    <span class="check"></span>
+                                </span>
+                            </label>
+                        </div>
+
+                        
+                        
                     </div>
+
+                    
+
                     <div class="card-body">
+                       
+<!---->
+<a href="#"><i class="fa-bomb"></i></a>
+
+
+
+<!--div class="fixed-plugin">
+    <div class="dropdown show-dropdown open show">
+        <a href="#" data-toggle="dropdown" aria-expanded="true">
+            <i class="fa fa-cog fa-2x"> </i>
+        </a>
+        <ul class="dropdown-menu show"  >
+            <li class="header-title"> Sidebar Filters</li>
+            
+            
+            
+            <li class="adjustments-line">
+            
+                
+            </li>
+            <li class="adjustments-line">
+                
+            </li>
+        </ul>
+    </div>
+</div-->
+<!---->
+                        
                         <form  class="navbar-form" >
                             <div class="input-group no-border">
-                                <input type="text" value="" class="form-control" placeholder="Usuario..."[(ngModel)]="nombreUsuario" name="nombreUsuario">
+                                <input type="text" value="" class="form-control" placeholder="Usuario..."[(ngModel)]="miU.username" name="nombreUsuario">
                                 <!--<button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon">
                                     <i class="material-icons">search</i>
                                     <div class="ripple-container"></div>
@@ -18,15 +61,51 @@
                             </div>
                             
                             <div class="input-group no-border">
-                                <input type="password" value="" class="form-control" placeholder="Contraseña..."  [(ngModel)]="contrasena" name="contrasena">
+                                <input type="password" value="" class="form-control" placeholder="Contraseña..."  [(ngModel)]="miU.password" name="contrasena">
                             </div>
                             <div class="input-group no-border">
                                 <button (click)="validarUsuario()" [routerLink]="['/calendario']" type="submit" class="btn btn-white btn-round " style="background-color: rgb(192, 189, 189); color: beige; ">
                                     Aceptar
                                     
                                 </button>
+                                <!--button (click)="validarUsuario()"  type="submit" class="btn btn-white btn-round " style="background-color: rgb(192, 189, 189); color: beige; ">
+                                    Aceptar
+                                    
+                                </button-->
                                 <a [routerLink]="['/registro']">Eres nuevo?</a>
+                                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                                    <mat-icon>add_circle_outline</mat-icon>
+                                  </button>
+                                  <mat-menu #menu="matMenu"  >
+
+                                        <form class="col-md-12" (click)="stopPropagation($event)">
+                                            <mat-form-field class="example-full-width">
+                                            <input matInput type="text" style="font-size:10px"[(ngModel)]="id" name="id">
+                                            </mat-form-field>
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput  type="text" style="font-size:10px" [(ngModel)]="nombre" name="nombre">
+                                                </mat-form-field>
+                                            <button type="button" id="btnLogin" class="btn btn-default">Login</button>
+                                        </form>
+                                        <button mat-menu-item>
+                                        <mat-icon>dialpad</mat-icon>
+                                        <span>Redial</span>
+                                        </button>
+                                        <button mat-menu-item disabled>
+                                        <mat-icon>voicemail</mat-icon>
+                                        <span>Check voice mail</span>
+                                        </button>
+                                        <button mat-menu-item>
+                                        <mat-icon>notifications_off</mat-icon>
+                                        <span>Disable alerts</span>
+                                        </button>
+                                  </mat-menu>
                             </div>
+<!---->
+
+                            
+
+<!---->
                             
                         </form>
                     </div>
@@ -36,4 +115,3 @@
         </div>
     </div>
   </div>
-  

@@ -17,6 +17,11 @@ import {MatSelectModule} from '@angular/material/select';
 import { ActividadCrearComponent } from 'app/actividad-crear/actividad-crear.component';
 import { RendimientoComponent } from 'app/rendimiento/rendimiento.component';
 import { PagprincipalComponent } from 'app/pagprincipal/pagprincipal.component';
+import { ObjetivosComponent } from 'app/objetivos/objetivos.component';
+import {MatIconModule} from '@angular/material/icon';
+
+
+import {MatMenuModule} from '@angular/material/menu'; 
 
 
 @NgModule({
@@ -31,6 +36,10 @@ import { PagprincipalComponent } from 'app/pagprincipal/pagprincipal.component';
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
+    MatIconModule,
+    MatMenuModule, 
+    
+
   ],
   declarations: [
     CalendarioComponent,
@@ -41,7 +50,12 @@ import { PagprincipalComponent } from 'app/pagprincipal/pagprincipal.component';
     ActividadCrearComponent,
     RendimientoComponent,
     PagprincipalComponent,
-  ]
+    ObjetivosComponent,
+  ],
+  exports:[PagprincipalComponent,    MatButtonModule,
+    MatIconModule,
+    MatMenuModule,]
+
 })
 
 export class AdminLayoutModule {}

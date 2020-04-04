@@ -1,11 +1,11 @@
 
-export interface Usuario{
+export class Usuario{
     id: number
-    first_name:String
-    last_name:String
-    username:String
-    email:String
-    password:String
-    gen_estudiante: "F",
-    carr_estudiante:String
+    first_name:string
+    last_name:string
+    username:string
+    email:string
+    password:string
+
+    carr_estudiante:string
 }
