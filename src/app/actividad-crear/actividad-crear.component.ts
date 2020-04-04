@@ -35,18 +35,23 @@ $('.dropdown-menu').keydown(function(e) {
    
  lunes(){
   this.dia=1;
+
   }martes(){
 
   this.dia=2;
   
 }miercoles(){
 this.dia=3;
+
   }jueves(){
 this.dia=4;
+
   }viernes(){
 this.dia=5;
+
   }sabado(){
 this.dia=6;
+
   }domingo(){
 this.dia=7;
 
@@ -58,7 +63,7 @@ this.dia=7;
 if(this.contadorT<1){
   
   this.Prioridad=0;
-this.actividad.NombreA=this.NombreA;
+this.actividad.nom_actividad=this.NombreA;
 var HoraIn=$('select#exampleFormControlSelect1').val();;
   var HoraFn=$('select#exampleFormControlSelect2').val();;
   this.HorasA=+HoraIn;
@@ -67,31 +72,31 @@ this.HorasF=+HoraFn;
 this.actividad.HoraFn=this.HorasF;
 this.actividad.Motivacion=this.Motivacion;
 var p=$('select#exampleFormControlSelect3').val();
-    var input='<h5 class="card-title " style="align-content: center;" id="pruebaN" >'+this.actividad.NombreA+'</h5>';
+    var input='<h5 class="card-title " style="align-content: center;" id="pruebaN" >'+this.actividad.nom_actividad+'</h5>';
    
 
 this.Prioridad=+p;
-   this.actividad.DescripcionA=this.DescripcionA;
+   this.actividad.des_actividad=this.DescripcionA;
     var cuerpo1='<h5 class="card-title " style="align-content: center;"  > hora inicial es: '+this.actividad.HoraIn+" hora Final es: "+this.actividad.HoraFn+'</h5>';
-    var cuerpo='<h6 class="card-title " style="align-content: center;"  >'+this.actividad.DescripcionA+'</h6>';
+    var cuerpo='<h6 class="card-title " style="align-content: center;"  >'+this.actividad.des_actividad+'</h6>';
 
 alert(this.Prioridad);
-  this.actividad.prioridad=this.Prioridad;
-this.actividad.Dia=this.dia;
-if(this.actividad.Dia==1){
-         if(this.actividad.prioridad===1)
+  this.actividad.id_prioridad=this.Prioridad;
+
+if(this.dia==1){
+         if(this.actividad.id_prioridad===1)
                       {
                       var botonP='<button type="button" class="btn btn-outline-success" (click)="prioridadB()" > Prioridad Baja</button>'; 
                       $('#cuerpoT').append(botonP);
                       this.Prioridad=0;
                       }
-        if(this.actividad.prioridad===2)
+        if(this.actividad.id_prioridad===2)
                       {
                       var botonP=' <button type="button" class="btn btn-outline-warning" (click)="prioridadM()"  > Prioridad Media</button>';
                       $('#cuerpoT').append(botonP);
                       this.Prioridad=0;
                       }
-        if(this.actividad.prioridad===3)
+        if(this.actividad.id_prioridad===3)
                       {
                       var botonP='<button type="button" class="btn btn-outline-danger  "    >Prioridad Alta</button>';
                       $('#cuerpoT').append(botonP);
@@ -102,20 +107,20 @@ if(this.actividad.Dia==1){
       $('#cuerpoT').append(cuerpo); 
        this.Prioridad=0;
 }
-if(this.actividad.Dia==2){
-      if(this.actividad.prioridad==1)
+if(this.dia==2){
+      if(this.actividad.id_prioridad==1)
           {
           var botonP='<button type="button" class="btn btn-outline-success" (click)="prioridadB()" > Prioridad Baja</button>';  
           $('#cuerpoT2').append(botonP);
           this.Prioridad=0;
           }
-      if(this.actividad.prioridad==2)
+      if(this.actividad.id_prioridad==2)
           {
           var botonP=' <button type="button" class="btn btn-outline-warning" (click)="prioridadM()"  > Prioridad Media</button>';   
           $('#cuerpoT2').append(botonP);
           this.Prioridad=0;
           }
-      if(this.actividad.prioridad==3)
+      if(this.actividad.id_prioridad==3)
           {
           var botonP='<button type="button" class="btn btn-outline-danger  "    >Prioridad Alta</button>';
           $('#cuerpoT2').append(botonP);
@@ -126,20 +131,20 @@ if(this.actividad.Dia==2){
       $('#cuerpoT2').append(cuerpo); 
        this.Prioridad=0;
 }
-if(this.actividad.Dia==3){
-      if(this.actividad.prioridad==1)
+if(this.dia==3){
+      if(this.actividad.id_prioridad==1)
         {
         var botonP='<button type="button" class="btn btn-outline-success" (click)="prioridadB()" > Prioridad Baja</button>';
             $('#cuerpoT3').append(botonP); 
             this.Prioridad=0;
         }
-      if(this.actividad.prioridad==2)
+      if(this.actividad.id_prioridad==2)
         {
         var botonP=' <button type="button" class="btn btn-outline-warning" (click)="prioridadM()"  > Prioridad Media</button>';
           $('#cuerpoT3').append(botonP);  
           this.Prioridad=0;
         }
-    if(this.actividad.prioridad==3)
+    if(this.actividad.id_prioridad==3)
         {
         var botonP='<button type="button" class="btn btn-outline-danger  "    >Prioridad Alta</button>';
         $('#cuerpoT3').append(botonP); 
@@ -151,8 +156,8 @@ if(this.actividad.Dia==3){
      
     
 }
-if(this.actividad.Dia==4){
-      if(this.actividad.prioridad==1)
+if(this.dia==4){
+      if(this.actividad.id_prioridad==1)
 {
 
 var botonP='<button type="button" class="btn btn-outline-success" (click)="prioridadB()" > Prioridad Baja</button>';
@@ -160,7 +165,7 @@ var botonP='<button type="button" class="btn btn-outline-success" (click)="prior
 $('#cuerpoT4').append(botonP); 
 this.Prioridad=0;
 }
-if(this.actividad.prioridad==2)
+if(this.actividad.id_prioridad==2)
 {
   
 
@@ -169,7 +174,7 @@ var botonP=' <button type="button" class="btn btn-outline-warning" (click)="prio
 $('#cuerpoT4').append(botonP); 
 this.Prioridad=0;
 }
-if(this.actividad.prioridad==3)
+if(this.actividad.id_prioridad==3)
 {
 
 var botonP='<button type="button" class="btn btn-outline-danger  "    >Prioridad Alta</button>';
@@ -181,8 +186,8 @@ this.Prioridad=0;
       $('#cuerpoT4').append(cuerpo); 
       
 }
-if(this.actividad.Dia==5){
-      if(this.actividad.prioridad==1)
+if(this.dia==5){
+      if(this.actividad.id_prioridad==1)
 {
 
 var botonP='<button type="button" class="btn btn-outline-success" (click)="prioridadB()" > Prioridad Baja</button>';
@@ -190,7 +195,7 @@ var botonP='<button type="button" class="btn btn-outline-success" (click)="prior
   $('#cuerpoT5').append(botonP); 
   this.Prioridad=0;
 }
-if(this.actividad.prioridad==2)
+if(this.actividad.id_prioridad==2)
 {
   
 
@@ -199,7 +204,7 @@ var botonP=' <button type="button" class="btn btn-outline-warning" (click)="prio
   $('#cuerpoT5').append(botonP);
   this.Prioridad=0; 
 }
-if(this.actividad.prioridad==3)
+if(this.actividad.id_prioridad==3)
 {
 
 var botonP='<button type="button" class="btn btn-outline-danger  "    >Prioridad Alta</button>';
@@ -211,8 +216,8 @@ var botonP='<button type="button" class="btn btn-outline-danger  "    >Prioridad
       $('#cuerpoT5').append(cuerpo); 
     
 }
-if(this.actividad.Dia==6){
-      if(this.actividad.prioridad==1)
+if(this.dia==6){
+      if(this.actividad.id_prioridad==1)
 {
 
 var botonP='<button type="button" class="btn btn-outline-success" (click)="prioridadB()" > Prioridad Baja</button>';
@@ -220,7 +225,7 @@ var botonP='<button type="button" class="btn btn-outline-success" (click)="prior
 $('#cuerpoT6').append(botonP);
 this.Prioridad=0;
 }
-if(this.actividad.prioridad==2)
+if(this.actividad.id_prioridad==2)
 {
   
 
@@ -229,7 +234,7 @@ var botonP=' <button type="button" class="btn btn-outline-warning" (click)="prio
 $('#cuerpoT6').append(botonP);
 this.Prioridad=0;
 }
-if(this.actividad.prioridad==3)
+if(this.actividad.id_prioridad==3)
 {
 
 var botonP='<button type="button" class="btn btn-outline-danger  "    >Prioridad Alta</button>';
@@ -241,8 +246,8 @@ this.Prioridad=0;
       $('#cuerpoT6').append(cuerpo); 
        this.Prioridad=0;
 }
-if(this.actividad.Dia==7){
-      if(this.actividad.prioridad==1)
+if(this.dia==7){
+      if(this.actividad.id_prioridad==1)
 {
 
 var botonP='<button type="button" class="btn btn-outline-success" (click)="prioridadB()" > Prioridad Baja</button>';
@@ -250,7 +255,7 @@ var botonP='<button type="button" class="btn btn-outline-success" (click)="prior
 $('#cuerpoT7').append(botonP); 
 this.Prioridad=0;
 }
-if(this.actividad.prioridad==2)
+if(this.actividad.id_prioridad==2)
 {
   
 var botonP=' <button type="button" class="btn btn-outline-warning" (click)="prioridadM()"  > Prioridad Media</button>';
@@ -258,7 +263,7 @@ var botonP=' <button type="button" class="btn btn-outline-warning" (click)="prio
 $('#cuerpoT7').append(botonP); 
 this.Prioridad=0;
 }
-if(this.actividad.prioridad==3)
+if(this.actividad.id_prioridad==3)
 {
 
 var botonP='<button type="button" class="btn btn-outline-danger  "    >Prioridad Alta</button>';
@@ -272,6 +277,7 @@ this.Prioridad=0;
 }
 this.contadorT=this.contadorT+1;
 this.actividad.id_actividad=this.contadorT;
+this.diaA();
 this.crearActividad();
   this.NombreA="";
   this.HorasA=0;
@@ -281,6 +287,33 @@ this.crearActividad();
 }else{
   this.agregarD();
 }
+  }
+
+  diaA(){
+if(this.dia==1){
+this.actividad.dia_actividad="lunes";
+}
+if(this.dia==2){
+this.actividad.dia_actividad="martes";
+}
+if(this.dia==3){
+this.actividad.dia_actividad="miercoles";
+}
+if(this.dia==4){
+this.actividad.dia_actividad="jueves";
+}
+if(this.dia==5){
+this.actividad.dia_actividad="viernes";
+}
+if(this.dia==6){
+this.actividad.dia_actividad="sabado";
+}
+if(this.dia==7){
+this.actividad.dia_actividad="domingo";
+}
+
+
+
   }
   
 
@@ -292,7 +325,9 @@ this.crearActividad();
     this.id=this.contadorT;
     if(this.id>=1){
  this.Prioridad=0;
-this.actividad.NombreA=this.NombreA;
+ this.HorasA=0;
+ this.HorasF=0;
+this.actividad.nom_actividad=this.NombreA;
 var HoraIn=$('select#exampleFormControlSelect1').val();;
   var HoraFn=$('select#exampleFormControlSelect2').val();;
   this.HorasA=+HoraIn;
@@ -300,14 +335,14 @@ this.actividad.HoraIn=this.HorasA;
 this.HorasF=+HoraFn;
 this.actividad.HoraFn=this.HorasF;
 var p=$('select#exampleFormControlSelect3').val();
-    var input='<h5 class="card-title " style="align-content: center;" id="pruebaN" >'+this.actividad.NombreA+'</h5>';   
+    var input='<h5 class="card-title " style="align-content: center;" id="pruebaN" >'+this.actividad.nom_actividad+'</h5>';   
 this.Prioridad=+p;
-this.actividad.prioridad=this.Prioridad;
-   this.actividad.DescripcionA=this.DescripcionA;
+this.actividad.id_prioridad=this.Prioridad;
+   this.actividad.des_actividad=this.DescripcionA;
    var cuerpo='<button type="button" class="btn btn-danger btn-circle btn-lg" (click)="eliminar()" id="'+this.id+'"><i class="fa fa-trash "></i></button>';
 
     var cuerpo1='<h5 class="card-title " style="align-content: center;"  > hora inicial es: '+this.actividad.HoraIn+" hora Final es: "+this.actividad.HoraFn+'</h5>';
-    var cuerpot='<h6 class="card-title " style="align-content: center;"  >'+this.actividad.DescripcionA+'</h6>';
+    var cuerpot='<h6 class="card-title " style="align-content: center;"  >'+this.actividad.des_actividad+'</h6>';
 
    if (this.dia==1){
                 $("<div>", {
@@ -335,19 +370,19 @@ this.NombreA="";
   this.HorasF=0;
   this.DescripcionA="";
   this.Prioridad=0 ;
-if(this.actividad.prioridad===1)
+if(this.actividad.id_prioridad===1)
                       {
                       var botonP='<button type="button" class="btn btn-outline-success" (click)="prioridadB()" > Prioridad Baja</button>'; 
                       $('#'+this.id+'body').append(botonP);
                       this.Prioridad=0;
                       }
-        if(this.actividad.prioridad===2)
+        if(this.actividad.id_prioridad===2)
                       {
                       var botonP=' <button type="button" class="btn btn-outline-warning" (click)="prioridadM()"  > Prioridad Media</button>';
                       $('#'+this.id+'body').append(botonP);
                       this.Prioridad=0;
                       }
-        if(this.actividad.prioridad===3)
+        if(this.actividad.id_prioridad===3)
                       {
                       var botonP='<button type="button" class="btn btn-outline-danger  "    >Prioridad Alta</button>';
                       $('#'+this.id+'body').append(botonP);
@@ -378,19 +413,19 @@ $('#miprueba2').append(cuerpo3);
 
 $('#'+this.id+'').append(input);
 $('#'+this.id+'body2').append(cuerpo1);
-if(this.actividad.prioridad===1)
+if(this.actividad.id_prioridad===1)
                       {
                       var botonP='<button type="button" class="btn btn-outline-success" (click)="prioridadB()" > Prioridad Baja</button>'; 
                       $('#'+this.id+'body2').append(botonP);
                       this.Prioridad=0;
                       }
-        if(this.actividad.prioridad===2)
+        if(this.actividad.id_prioridad===2)
                       {
                       var botonP=' <button type="button" class="btn btn-outline-warning" (click)="prioridadM()"  > Prioridad Media</button>';
                       $('#'+this.id+'body2').append(botonP);
                       this.Prioridad=0;
                       }
-        if(this.actividad.prioridad===3)
+        if(this.actividad.id_prioridad===3)
                       {
                       var botonP='<button type="button" class="btn btn-outline-danger  "    >Prioridad Alta</button>';
                       $('#'+this.id+'body2').append(botonP);
@@ -428,19 +463,19 @@ $('#miprueba3').append(cuerpo3);
 
 $('#'+this.id+'').append(input);
 $('#'+this.id+'body3').append(cuerpo1);
-if(this.actividad.prioridad===1)
+if(this.actividad.id_prioridad===1)
                       {
                       var botonP='<button type="button" class="btn btn-outline-success" (click)="prioridadB()" > Prioridad Baja</button>'; 
                       $('#'+this.id+'body3').append(botonP);
                       this.Prioridad=0;
                       }
-        if(this.actividad.prioridad===2)
+        if(this.actividad.id_prioridad===2)
                       {
                       var botonP=' <button type="button" class="btn btn-outline-warning" (click)="prioridadM()"  > Prioridad Media</button>';
                       $('#'+this.id+'body3').append(botonP);
                       this.Prioridad=0;
                       }
-        if(this.actividad.prioridad===3)
+        if(this.actividad.id_prioridad===3)
                       {
                       var botonP='<button type="button" class="btn btn-outline-danger  "    >Prioridad Alta</button>';
                       $('#'+this.id+'body3').append(botonP);
@@ -477,19 +512,19 @@ $('#miprueba4').append(cuerpo3);
 
 $('#'+this.id+'').append(input);
 $('#'+this.id+'body4').append(cuerpo1);
-if(this.actividad.prioridad===1)
+if(this.actividad.id_prioridad===1)
                       {
                       var botonP='<button type="button" class="btn btn-outline-success" (click)="prioridadB()" > Prioridad Baja</button>'; 
                       $('#'+this.id+'body4').append(botonP);
                       this.Prioridad=0;
                       }
-        if(this.actividad.prioridad===2)
+        if(this.actividad.id_prioridad===2)
                       {
                       var botonP=' <button type="button" class="btn btn-outline-warning" (click)="prioridadM()"  > Prioridad Media</button>';
                       $('#'+this.id+'body4').append(botonP);
                       this.Prioridad=0;
                       }
-        if(this.actividad.prioridad===3)
+        if(this.actividad.id_prioridad===3)
                       {
                       var botonP='<button type="button" class="btn btn-outline-danger  "    >Prioridad Alta</button>';
                       $('#'+this.id+'body4').append(botonP);
@@ -527,19 +562,19 @@ $('#miprueba5').append(cuerpo3);
 
 $('#'+this.id+'').append(input);
 $('#'+this.id+'body5').append(cuerpo1);
-if(this.actividad.prioridad===1)
+if(this.actividad.id_prioridad===1)
                       {
                       var botonP='<button type="button" class="btn btn-outline-success" (click)="prioridadB()" > Prioridad Baja</button>'; 
                       $('#'+this.id+'body5').append(botonP);
                       this.Prioridad=0;
                       }
-        if(this.actividad.prioridad===2)
+        if(this.actividad.id_prioridad===2)
                       {
                       var botonP=' <button type="button" class="btn btn-outline-warning" (click)="prioridadM()"  > Prioridad Media</button>';
                       $('#'+this.id+'body5').append(botonP);
                       this.Prioridad=0;
                       }
-        if(this.actividad.prioridad===3)
+        if(this.actividad.id_prioridad===3)
                       {
                       var botonP='<button type="button" class="btn btn-outline-danger  "    >Prioridad Alta</button>';
                       $('#'+this.id+'body5').append(botonP);
@@ -577,19 +612,19 @@ $('#miprueba6').append(cuerpo3);
 
 $('#'+this.id+'').append(input);
 $('#'+this.id+'body6').append(cuerpo1);
-if(this.actividad.prioridad===1)
+if(this.actividad.id_prioridad===1)
                       {
                       var botonP='<button type="button" class="btn btn-outline-success" (click)="prioridadB()" > Prioridad Baja</button>'; 
                       $('#'+this.id+'body6').append(botonP);
                       this.Prioridad=0;
                       }
-        if(this.actividad.prioridad===2)
+        if(this.actividad.id_prioridad===2)
                       {
                       var botonP=' <button type="button" class="btn btn-outline-warning" (click)="prioridadM()"  > Prioridad Media</button>';
                       $('#'+this.id+'body6').append(botonP);
                       this.Prioridad=0;
                       }
-        if(this.actividad.prioridad===3)
+        if(this.actividad.id_prioridad===3)
                       {
                       var botonP='<button type="button" class="btn btn-outline-danger  "    >Prioridad Alta</button>';
                       $('#'+this.id+'body6').append(botonP);
@@ -626,19 +661,19 @@ $('#miprueba7').append(cuerpo3);
 
 $('#'+this.id+'').append(input);
 $('#'+this.id+'body7').append(cuerpo1);
-if(this.actividad.prioridad===1)
+if(this.actividad.id_prioridad===1)
                       {
                       var botonP='<button type="button" class="btn btn-outline-success" (click)="prioridadB()" > Prioridad Baja</button>'; 
                       $('#'+this.id+'body7').append(botonP);
                       this.Prioridad=0;
                       }
-        if(this.actividad.prioridad===2)
+        if(this.actividad.id_prioridad===2)
                       {
                       var botonP=' <button type="button" class="btn btn-outline-warning" (click)="prioridadM()"  > Prioridad Media</button>';
                       $('#'+this.id+'body7').append(botonP);
                       this.Prioridad=0;
                       }
-        if(this.actividad.prioridad===3)
+        if(this.actividad.id_prioridad===3)
                       {
                       var botonP='<button type="button" class="btn btn-outline-danger  "    >Prioridad Alta</button>';
                       $('#'+this.id+'body7').append(botonP);
